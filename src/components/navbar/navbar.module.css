@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar_brand a {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar_menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar_menu li {
+    margin: 0 10px;
+    position: relative; /* Ensure the link is a positioned element */
+  }
+  
+  .navbar_menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+  }
+  
+  /* Add a horizontal line below each nav link */
+  .navbar_menu li a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s; /* Apply a transition effect on width property */
+  }
+  
+  /* On hover, transition the width of the line to the full width of the link */
+  .navbar_menu li a:hover::after {
+    width: 100%;
+  }
+  .navbar_toggle {
+    font-size: 24px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: none; /* Hide the toggle button by default for larger screens */
+  }
+  .profile{
+    font-size: 1.5rem;
+    color: white;
+  }
+  @media (max-width: 768px) {
+    .profile{
+        display: none;
+    }
+    .navbar_menu {
+      display: none; /* Hide the menu by default for small screens */
+    }
+  
+    .navbar_toggle {
+      display: block; /* Show the toggle button for small screens */
+    }
+  
+    .navbar_menu.show {
+      display: flex; /* Show the menu when the toggle button is clicked */
+      flex-direction: column;
+      background-color: #222;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+    }
+  }
