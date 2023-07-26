@@ -1,8 +1,16 @@
 import React from "react";
 import styles from "./sectionone.module.css";
 import { Col, Container, Row } from "react-bootstrap";
+import { motion } from "framer-motion";
+import {FaBtc} from 'react-icons/fa'
+import MyBtn from "../../buttons/MyBtn";
 
 const SectionOne = () => {
+
+  const BuyButtonStyle ={
+    background: 'red'
+  }
+  // linear-gradient(96.17deg,#aa85fa -2.71%,#ff4a9b 108.06%),#080013
   return (
     <div className={`${styles.sectione_container}`}>
       <div className={`${styles.sectione_section} container`}>
@@ -10,13 +18,36 @@ const SectionOne = () => {
           <Row>
             <Col>
               <div className={styles.sectionone_containerrow}>
-                <h1 className={`${styles.sectionone_h1}`}>
-                  A better way to bitcoin
+                <h1 className={`${styles.sectionone_h1} pt-5`}>
+                  <motion.div
+                    initial={{ x: "100vw" }}
+                    animate={{ x: 0 }}
+                    transition={{ delay: 3.0, duration: 4 }}
+                  >
+                    A better way to bitcoin
+                  </motion.div>
                 </h1>
-                <p>
-                  Join the fastest growing global cryptocurrency exchange — with
-                  the lowest fees around.
-                </p>
+
+                <motion.div
+                  initial={{ x: "-100vw" }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: 2.5, duration: 4 }}
+                >
+                  <p>
+                    Join the fastest growing global cryptocurrency exchange —
+                    with the lowest fees around.
+                  </p>
+                </motion.div>
+
+                <div className={`${styles.btc_div} mt-3`}>
+                  <span className={styles.btc_symbol}><FaBtc /></span>
+                  <span className={styles.btc_title}>Bitcoin </span>
+                  <span className={styles.btc}>BTC</span>
+                  <span className={styles.btc_pnl}> -0.49%</span>
+                  <span className={styles.btc_value}> $29,209.19</span>
+                  <MyBtn  style={BuyButtonStyle} children="Buy Now"/>
+                </div>
+
               </div>
             </Col>
           </Row>

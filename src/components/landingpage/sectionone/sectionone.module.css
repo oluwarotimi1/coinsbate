@@ -24,5 +24,70 @@ color: var(--color-white);
     text-align: center;
 }
 .sectione_container .sectionone_h1{   
-    font-size: 4rem;
+    font-size: 4.5rem;
+    font-weight: bolder;
+}
+.sectionone_containerrow p{
+      font-size: 1.5rem; 
+      /* max-width: 500px; */
+}
+
+.btc_div{
+    min-width: 450px;
+    border-radius: 20px;
+    color: var(--color-dark);
+    background: var(--color-white);
+    padding: 1rem 1.1rem;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btc_symbol{
+    color: rgb(251, 165, 165);
+    font-size: 1.3rem;
+}
+.btc_title{
+    font-size: 1.3rem;
+}
+.btc_pnl{ color: red;}
+.btc_value{
+    color: green;
+}
+
+/* SMALLER SCREENS */
+
+@media (max-width: 768px){
+    .sectionone_containerrow{
+        height: 80vh;
+    }
+    .sectione_container .sectionone_h1{   
+        font-size: 3rem;
+        font-weight: bolder;
+    }
+    .sectionone_containerrow p{
+       font-size: 1rem;
+    }
+    .btc_div{
+        min-width: 100px;
+        border-radius: 14px;
+        color: var(--color-dark);
+        background: var(--color-white);
+        padding: 0.2rem 0.6rem;
+        gap: 0.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btc_symbol{
+        color: rgb(251, 165, 165);
+        font-size: 1rem;
+    }
+    .btc_title{
+        font-size: 1rem;
+    }
+    .btc_pnl{ color: red;}
+    .btc_value{
+        color: green;
+    }
 }
