@@ -14,6 +14,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 import styles from './appbar.module.css'
 import {CgProfile} from 'react-icons/cg'
+import BasicAccordion from "../accordion/BasicAccordion";
 
 
 function MyAppBar() {
@@ -34,6 +35,11 @@ function MyAppBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const FeaturesStyles ={
+    color: 'black',
+    border: 'none',
+  }
 
   return (
     <AppBar position="static" className={styles.appbar_conatiner}>
@@ -89,8 +95,8 @@ function MyAppBar() {
               }}
               className={styles.appbar_menu}
             >
-              <MenuItem  onClick={handleCloseNavMenu} className={styles.appbar_menuitem}>
-                  <Typography textAlign="center" > <Link to="/features">Features</Link></Typography>
+              <MenuItem className={styles.appbar_menuitem}>
+                  <Typography textAlign="center" > <BasicAccordion parent="Features"  style={FeaturesStyles} /></Typography>
                 </MenuItem>
                 <MenuItem  onClick={handleCloseNavMenu} className={styles.appbar_menuitem}>
                   <Typography textAlign="center"> <Link to="/prices">Prices</Link></Typography>
@@ -150,7 +156,7 @@ function MyAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip >
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, color: 'white' }}>
                <CgProfile />
               </IconButton>
