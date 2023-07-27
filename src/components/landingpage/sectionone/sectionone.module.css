@@ -54,30 +54,31 @@ color: var(--color-white);
 .btc_value{
     color: green;
 }
+.btn_two{
+    display: none;
+}
 
 /* SMALLER SCREENS */
 
 @media (max-width: 768px){
+    .sectione_container{
+        height: 60vh;
+    }
     .sectionone_containerrow{
-        height: 80vh;
+        height: 60vh;
+        width: 100%;
     }
     .sectione_container .sectionone_h1{   
-        font-size: 3rem;
+        font-size: 2.3rem;
+        padding-bottom: 1.1rem;
         font-weight: bolder;
     }
     .sectionone_containerrow p{
        font-size: 1rem;
+       padding-bottom: 1rem;
     }
     .btc_div{
-        min-width: 100px;
-        border-radius: 14px;
-        color: var(--color-dark);
-        background: var(--color-white);
-        padding: 0.2rem 0.6rem;
-        gap: 0.7rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: none;
     }
     .btc_symbol{
         color: rgb(251, 165, 165);
@@ -89,5 +90,8 @@ color: var(--color-white);
     .btc_pnl{ color: red;}
     .btc_value{
         color: green;
+    }
+    .btn_two{
+        display: flex;
     }
 }
