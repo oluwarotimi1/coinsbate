@@ -1,16 +1,29 @@
 .sectiontwo_container{
-    height: 50vh;
+    height: fit-content;
 }
 .SectionTwo_colone{
     background-color: #080013;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1.6rem;
     text-align: left;
 }
+.SectionTwo_colone p{
+    margin-top: 1rem;
+}
+.SectionTwo_colone h5{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+}
+
 .SectionTwo_coltwo{
-    background-image: url('./../../../assets/se.jpg'); /* Replace with the actual path to your image */
+    background-image: url('./../../../assets/cryptoportfolio.jpg'); /* Replace with the actual path to your image */
   
   /* Set the background size and other properties */
   background-size: cover;
@@ -18,7 +31,7 @@
   background-repeat: no-repeat;
   
   /* Set the size of the section (optional) */
-  min-height: 400px;
+  min-height: 570px;
 }
 
 /* SMALLER SCREENS */
@@ -26,5 +39,14 @@
 @media (max-width: 768px){
     .SectionTwo_coltwo{
         display: none;
+    }
+    .SectionTwo_colone{
+        min-height: 350px;
+    }
+    .SectionTwo_colone{
+        gap: 1rem;
+    }
+    .SectionTwo_colone h5{
+        font-size: 12px;
     }
 }

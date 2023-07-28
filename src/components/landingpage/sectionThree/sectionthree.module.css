@@ -1,0 +1,34 @@
+.sectionthree_container{
+    display: none;
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    font-weight: lighter;
+}
+@media (max-width: 768px){
+    .sectionthree_container{ 
+        display: flex;
+
+    }
+}
+.sectionthree_colone{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-dark);
+}
+.coin{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.sectionthree_colone h3{
+    font-size: large;
+    font-weight: 200;
+}
+.sectionthree_colone h4{
+    font-size: 12px;
+    color: green;
+}

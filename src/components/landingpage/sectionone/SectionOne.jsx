@@ -71,7 +71,7 @@ const SectionOne = () => {
                       // Reset the background color when the hover is no longer active
                       BuyButtonStyleTwo.background = "red";
                     }}
-                    children="Buy Now"
+                    children="Trade Now"
                   />
                 </div>
               </div>

@@ -1,0 +1,11 @@
+.basiccard_container{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+
+}
+.basiccard_container h2{
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--color-dark);
+}
