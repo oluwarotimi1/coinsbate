@@ -1,0 +1,40 @@
+.sectionsix_container{
+    border-top: 1px solid var(--color-white);
+}
+.sectionsix_coltwo_div{
+background-image: url('./../../../assets/man.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0rem 0rem 1rem 0rem;
+  min-height: 450px;
+  min-width: 300;
+}
+.sectionsix_colone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0rem 2rem 0rem 0rem;
+}
+.sectionsix_hodl{
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 768px){
+    .sectionsix_colone{
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .sectionsix_coltwo{
+        display: none;
+    }
+    .sectionsix_coltwo_div{
+        display: none;
+    }
+    
+}

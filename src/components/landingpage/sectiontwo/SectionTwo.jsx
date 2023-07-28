@@ -20,7 +20,7 @@ const SectionTwo = () => {
               we've got tools built just for you.
             </h5 >
               <BasicCard  parent="New Investors" children="We make it easy to learn about and buy your first crypto assets."/>
-              <BasicCard  parent="Pro Traders" children="You'll get all of the tools you need for more frequent and complex trades."/>
+              <BasicCard parent="Pro Traders" children="You'll get all of the tools you need for more frequent and complex trades."/>
             
           </Col>
           <Col className={styles.SectionTwo_coltwo}></Col>

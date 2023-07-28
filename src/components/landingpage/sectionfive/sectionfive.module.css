@@ -1,0 +1,35 @@
+.sectionfive_container{
+    border-top: 1px solid var(--color-white);
+}
+.sectionfive_coltwo_div{
+background-image: url('./../../../assets/crptotrading.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 1rem 0rem 0rem 0rem;
+  min-height: 450px;
+  min-width: 300;
+}
+.sectionfive_colone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@media (max-width: 768px){
+    .sectionfive_colone{
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .sectionfive_coltwo{
+        display: none;
+    }
+    .sectionfive_coltwo_div{
+        display: none;
+    }
+    
+}

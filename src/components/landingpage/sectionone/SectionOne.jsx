@@ -33,7 +33,7 @@ const SectionOne = () => {
                   <motion.div
                     initial={{ x: "100vw" }}
                     animate={{ x: 0 }}
-                    transition={{ delay: 3.0, duration: 4 }}
+                    transition={{ delay: 2.0, duration: 3 }}
                   >
                     A better way to bitcoin
                   </motion.div>
@@ -42,7 +42,7 @@ const SectionOne = () => {
                 <motion.div
                   initial={{ x: "-100vw" }}
                   animate={{ x: 0 }}
-                  transition={{ delay: 2.5, duration: 4 }}
+                  transition={{ delay: 2.0, duration: 3 }}
                 >
                   <p>
                     Join the fastest growing global cryptocurrency exchange —

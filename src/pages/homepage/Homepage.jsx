@@ -5,6 +5,9 @@ import './homepage.css'
 import SectionTwo from "../../components/landingpage/sectiontwo/SectionTwo";
 import SectionOne from "../../components/landingpage/sectionone/SectionOne";
 import SectionThree from "../../components/landingpage/sectionThree/SectionThree";
+import SectionFour from "../../components/landingpage/secitionfour/SectionFour";
+import SectionFive from "../../components/landingpage/sectionfive/SectionFive";
+import SectionSix from "../../components/landingpage/sectionsix/SectionSix";
 
 const Homepage = () => {
   // const primaryButtonStyle ={
@@ -16,6 +19,9 @@ const Homepage = () => {
         <SectionOne />
         <SectionThree />
         <SectionTwo />
+        <SectionFour />
+        <SectionFive />
+        <SectionSix />
       </div>
       {/* <MyBtn style={primaryButtonStyle} children="primary"/> */}
     </div>
