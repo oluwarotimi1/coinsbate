@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./login.module.css";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 import MyBtn from "../../components/buttons/MyBtn";
 
 const Login = () => {
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+  // const [password, setPassword] = useState("");
+  // const [showPassword, setShowPassword] = useState(false);
   // const handleChange = (e) =>{
   //   setPassword(e.target.value);
   // };
-  const toggleShowPassword = () => {
-    setShowPassword((prevPassword) => !prevPassword);
-  };
+  // const toggleShowPassword = () => {
+  //   setShowPassword((prevPassword) => !prevPassword);
+  // };
   return (
     <div className={styles.login_container}>
       {/* <input type="text" name={name} onChange={(e)=> setName(e.target.value)}/>
