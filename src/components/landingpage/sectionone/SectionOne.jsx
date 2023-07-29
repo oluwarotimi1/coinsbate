@@ -33,7 +33,7 @@ const SectionOne = () => {
                   <motion.div
                     initial={{ x: "100vw" }}
                     animate={{ x: 0 }}
-                    transition={{ delay: 2.0, duration: 3 }}
+                    transition={{ delay: 1.3, duration: 3 }}
                   >
                     A better way to bitcoin
                   </motion.div>
@@ -42,7 +42,7 @@ const SectionOne = () => {
                 <motion.div
                   initial={{ x: "-100vw" }}
                   animate={{ x: 0 }}
-                  transition={{ delay: 2.0, duration: 3 }}
+                  transition={{ delay: 1.3, duration: 3 }}
                 >
                   <p>
                     Join the fastest growing global cryptocurrency exchange —
@@ -58,7 +58,7 @@ const SectionOne = () => {
                   <span className={styles.btc}>BTC</span>
                   <span className={styles.btc_pnl}> -0.49%</span>
                   <span className={styles.btc_value}> $29,209.19</span>
-                  <MyBtn style={BuyButtonStyle} children="Buy Now" />
+                  <MyBtn style={BuyButtonStyle} children="Trade Now" />
                 </div>
                 <div className={styles.btn_two}>
                   <MyBtn

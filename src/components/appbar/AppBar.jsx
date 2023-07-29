@@ -12,10 +12,9 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
-import styles from './appbar.module.css'
-import {CgProfile} from 'react-icons/cg'
+import styles from "./appbar.module.css";
+import { CgProfile } from "react-icons/cg";
 import BasicAccordion from "../accordion/BasicAccordion";
-
 
 function MyAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -36,13 +35,23 @@ function MyAppBar() {
     setAnchorElUser(null);
   };
 
-  const FeaturesStyles ={
-    color: 'black',
-    border: 'none',
-  }
+  const FeaturesStyles = {
+    color: "black",
+    border: "none",
+  };
 
   return (
-    <AppBar position="static" className={styles.appbar_conatiner}>
+    <AppBar
+      position="static"
+      className={styles.appbar_conatiner}
+      sx={{
+        background: "var(--color-dark)",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        zIndex: 1000
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -64,8 +73,10 @@ function MyAppBar() {
             <Link to="/">RegXchange</Link>
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }} 
-              className={styles.appbar_box}>
+          <Box
+            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            className={styles.appbar_box}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -96,17 +107,38 @@ function MyAppBar() {
               className={styles.appbar_menu}
             >
               <MenuItem className={styles.appbar_menuitem}>
-                  <Typography textAlign="center" > <BasicAccordion parent="Features"  style={FeaturesStyles} /></Typography>
-                </MenuItem>
-                <MenuItem  onClick={handleCloseNavMenu} className={styles.appbar_menuitem}>
-                  <Typography textAlign="center"> <Link to="/prices">Prices</Link></Typography>
-                </MenuItem>
-                <MenuItem  onClick={handleCloseNavMenu} className={styles.appbar_menuitem}>
-                  <Typography textAlign="center"> <Link to="/institution">Institutions</Link></Typography>
-                </MenuItem>
-                <MenuItem  onClick={handleCloseNavMenu} className={styles.appbar_menuitem}>
-                  <Typography textAlign="center"> <Link to="/more">More</Link></Typography>
-                </MenuItem>
+                <Typography textAlign="center">
+                  {" "}
+                  <BasicAccordion parent="Features" style={FeaturesStyles} />
+                </Typography>
+              </MenuItem>
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                className={styles.appbar_menuitem}
+              >
+                <Typography textAlign="center">
+                  {" "}
+                  <Link to="/prices">Prices</Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                className={styles.appbar_menuitem}
+              >
+                <Typography textAlign="center">
+                  {" "}
+                  <Link to="/institution">Institutions</Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                className={styles.appbar_menuitem}
+              >
+                <Typography textAlign="center">
+                  {" "}
+                  <Link to="/more">More</Link>
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -130,35 +162,38 @@ function MyAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                <Link to='/features'>Features</Link>
-              </Button>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                <Link to='/prices'>Prices</Link>
-              </Button>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                <Link to='/institution'>Institution</Link>
-              </Button>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                <Link to='/more'>More</Link>
-              </Button>
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link to="/features">Features</Link>
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link to="/prices">Prices</Link>
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link to="/institution">Institution</Link>
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link to="/more">More</Link>
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip >
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, color: 'white' }}>
-               <CgProfile />
+            <Tooltip>
+              <IconButton
+                onClick={handleOpenUserMenu}
+                sx={{ p: 0, color: "white" }}
+              >
+                <CgProfile />
               </IconButton>
             </Tooltip>
             <Menu
@@ -176,25 +211,40 @@ function MyAppBar() {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
-              
               className={styles.appbar_menu}
             >
-                <MenuItem  onClick={handleCloseUserMenu} className={styles.appbar_menuitem}>
-                    <Link to="/profile" ><Typography textAlign="center">Profile</Typography></Link>
-                  
-                </MenuItem>
-                <MenuItem  onClick={handleCloseUserMenu} className={styles.appbar_menuitem}>
-                    <Link to="/account"><Typography textAlign="center">Account</Typography></Link>
-                  
-                </MenuItem>
-                <MenuItem  onClick={handleCloseUserMenu} className={styles.appbar_menuitem}>
-                    <Link to="/login"><Typography textAlign="center">Login</Typography></Link>
-                  
-                </MenuItem>
-                <MenuItem  onClick={handleCloseUserMenu} className={styles.appbar_menuitem}>
-                    <Link to="/sign-up"><Typography textAlign="center">Sign Up</Typography></Link>
-                  
-                </MenuItem>
+              <MenuItem
+                onClick={handleCloseUserMenu}
+                className={styles.appbar_menuitem}
+              >
+                <Link to="/profile">
+                  <Typography textAlign="center">Profile</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem
+                onClick={handleCloseUserMenu}
+                className={styles.appbar_menuitem}
+              >
+                <Link to="/account">
+                  <Typography textAlign="center">Account</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem
+                onClick={handleCloseUserMenu}
+                className={styles.appbar_menuitem}
+              >
+                <Link to="/login">
+                  <Typography textAlign="center">Login</Typography>
+                </Link>
+              </MenuItem>
+              <MenuItem
+                onClick={handleCloseUserMenu}
+                className={styles.appbar_menuitem}
+              >
+                <Link to="/sign-up">
+                  <Typography textAlign="center">Sign Up</Typography>
+                </Link>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>

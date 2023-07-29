@@ -30,7 +30,7 @@ const SectionSix = () => {
               <div className={styles.sectionsix_hodl}>
                 <span><GoClockFill size={50}/></span>
                 <p>
-                Downtime is so 2020. With no transaction downtime, know your buy is always good as gold.
+                Downtime is so 2022. With no transaction downtime, know your buy is always good as gold.
                 </p>
               </div>
             </div>
