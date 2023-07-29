@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./login.module.css";
 // import { Container } from "react-bootstrap";
 import MyBtn from "../../components/buttons/MyBtn";
 
 const Login = () => {
+  const emailInputRef = useRef(null)
   // const [password, setPassword] = useState("");
   // const [showPassword, setShowPassword] = useState(false);
   // const handleChange = (e) =>{
@@ -12,6 +13,9 @@ const Login = () => {
   // const toggleShowPassword = () => {
   //   setShowPassword((prevPassword) => !prevPassword);
   // };
+  useEffect(()=>{
+    emailInputRef.current.focus();
+  },[])
   return (
     <div className={styles.login_container}>
       {/* <input type="text" name={name} onChange={(e)=> setName(e.target.value)}/>
@@ -25,7 +29,7 @@ const Login = () => {
           <h1 style={{ textAlign: "center" }}>Log In</h1>
           <div className={styles.login_email}>
             <label htmlFor="email">Email</label>
-            <input type="text" name="email" className={styles.email_input} />
+            <input type="text" name="email" className={styles.email_input} ref={emailInputRef} />
           </div>
           <div className={styles.login_password}>
             <label htmlFor="email">Password</label>
