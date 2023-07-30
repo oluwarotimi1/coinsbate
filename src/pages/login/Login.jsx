@@ -15,7 +15,7 @@ const Login = () => {
     setPassword(e.target.value);
   };
   const toggleShowPassword = () => {
-    setShowPassword((prevPasswrod) => !prevPasswrod);
+    setShowPassword((prevShowEyes) => !prevShowEyes);
   };
 
   useEffect(() => {
