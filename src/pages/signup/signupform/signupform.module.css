@@ -1,0 +1,9 @@
+.signupform_container{
+    display: flex;
+  background: var(--color-white);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 380px;
+  min-height: 450px;
+}

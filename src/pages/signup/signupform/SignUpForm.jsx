@@ -1,11 +1,18 @@
-import React from 'react'
-
-const SignUpForm = () => {
+import React from "react";
+import styles from "./signupform.module.css";
+const SignUpForm = ({ setActiveTab }) => {
+  const handleBack = () => {
+    setActiveTab("create");
+  };
+  const handleNext = () => {
+    setActiveTab("verification");
+  };
   return (
-    <div>
-      Sign up form
-    </div>
-  )
-}
+    <form className={styles.signupform_container}>
+      <button onClick={handleBack}>Back</button>
+      <button onClick={handleNext}>Next - Sign up</button>
+    </form>
+  );
+};
 
-export default SignUpForm
+export default SignUpForm;

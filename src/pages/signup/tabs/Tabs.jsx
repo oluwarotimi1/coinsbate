@@ -1,17 +1,20 @@
-import React from 'react'
-import Create from '../create/Create';
-import SignUpForm from '../signupform/SignUpForm';
+import React from "react";
+import Create from "../create/Create";
+import SignUpForm from "../signupform/SignUpForm";
+import Verification from "../verification/Verification";
 
-const Tabs = ({activeTab}) => {
-    switch (activeTab) {
-        case "create":
-          return <Create />;
-          case "signupform":
-          return <SignUpForm />;
-       
-        default:
-          return <Create />
-       }
-}
+const Tabs = ({ activeTab, setActiveTab }) => {
+  switch (activeTab) {
+    case "create":
+      return <Create activetab={activeTab} setActiveTab={setActiveTab} />;
+    case "signupform":
+      return <SignUpForm activetab={activeTab} setActiveTab={setActiveTab} />;
+    case "verification":
+      return <Verification activetab={activeTab} setActiveTab={setActiveTab} />;
 
-export default Tabs
+    default:
+      return <Create />;
+  }
+};
+
+export default Tabs;
