@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Tabs from "./tabs/Tabs";
 
 const SignUp = () => {
   return (
     <div>
-      Sign Up
+      <Tabs />
     </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;

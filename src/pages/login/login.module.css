@@ -1,55 +1,67 @@
-.login_container{
-    margin-top: 5rem;
-    height: 80vh;   
+.login_container {
+  margin-top: 5rem;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-bg);
+}
+.login_form {
+  display: flex;
+  background: var(--color-white);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 380px;
+  min-height: 450px;
+}
+.login_section h1 {
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+}
+.login_email {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+.email_input {
+  width: 320px;
+  padding: 14px;
+  margin-top: 0.7rem;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid rgb(175, 175, 175);
+}
+.login_password div{
+    position: relative;
+}
+.login_password_label{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: var(--color-bg);
-    
+    justify-content: space-between;
 }
-.login_form{
-    display: flex;
-    background: var(--color-white);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-width: 380px;
-    min-height: 450px;
+.login_password {
+  display: flex;
+  flex-direction: column;
 }
-.login_section h1{
-    margin-bottom: 2rem;
-    font-size: 2rem;
+.password_input {
+  margin-top: 0.7rem;
+  width: 320px;
+  padding: 14px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid rgb(175, 175, 175);
 }
-.login_email{
-    display: flex;
-    flex-direction: column;
-    margin: 2rem 0;
-}
-.email_input{
-    width: 320px;
-    padding: 14px;
-    margin-top: 0.7rem;
-    border-radius: 10px;
-    outline: none;
-    border: 1px solid rgb(175, 175, 175);
-}
-.login_password{
-    display: flex;
-    flex-direction: column;
-}
-.password_input{
-    margin-top: 0.7rem;
-    width: 320px;
-    padding: 14px;
-    border-radius: 10px;
-    outline: none;
-    border: 1px solid rgb(175, 175, 175);
+.login_eye {
+  position: absolute;
+  top: 55%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
-@media (max-width: 768px){
-    .login_container{
-        height: 70vh;
-    }
+@media (max-width: 768px) {
+  .login_container {
+    height: 70vh;
+  }
 }
-
