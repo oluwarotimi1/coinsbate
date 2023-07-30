@@ -1,6 +1,6 @@
 .signup_container {
   margin-top: 5rem;
-  height: 80vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
