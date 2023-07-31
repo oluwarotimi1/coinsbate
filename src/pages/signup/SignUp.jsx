@@ -6,9 +6,7 @@ const SignUp = () => {
   const [activeTab, setActiveTab] = useState("create");
   return (
     <div className={styles.signup_container}>
-      <form action="">
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-      </form>
     </div>
   );
 };

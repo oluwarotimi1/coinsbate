@@ -26,7 +26,7 @@ const Create = ({ setActiveTab }) => {
       </div>
 
       <label className={styles.create_label}>
-        <input type="radio" name="account" value="personal" checked />
+        <input type="radio" name="account" value="personal" defaultChecked />
         <div>
           <h5>Personal Account</h5>
           <span>Daily Transfer Limit - ₦2M</span>
