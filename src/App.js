@@ -6,12 +6,12 @@ import Homepage from "./pages/homepage/Homepage";
 import Login from "./pages/login/Login";
 import SignUp from "./pages/signup/SignUp";
 import Dashboard from "./pages/dashboard/Dashboard";
-import PrivateRoute from "./components/privateroute/PrivateRoute";
-import { useContext } from "react";
-import { UserContext } from "./components/context/UserContext";
+// import PrivateRoute from "./components/privateroute/PrivateRoute";
+// import { useContext } from "react";
+// import { UserContext } from "./components/context/UserContext";
 
 function App() {
-  const {isLoggedIn} = useContext(UserContext);
+  // const { isLoggedIn } = useContext(UserContext);
   return (
     <>
       <MyAppBar />
@@ -19,15 +19,15 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
-        <Route
+        <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route
           path="/dashboard"
           element={
             <PrivateRoute auth={isLoggedIn}>
               <Dashboard />
             </PrivateRoute>
           }
-        />
-
+        /> */}
       </Routes>
       <Footer />
     </>

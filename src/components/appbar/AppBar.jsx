@@ -17,9 +17,13 @@ import { CgProfile } from "react-icons/cg";
 import BasicAccordion from "../accordion/BasicAccordion";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
+import { logout } from "../../auth/firebase/firebase";
+import { useNavigate } from "react-router-dom";
 
 function MyAppBar() {
+  const {logOut} = useContext(UserContext)
   const {isLoggedIn} = useContext(UserContext); 
+  const navigate = useNavigate('')
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -42,6 +46,12 @@ function MyAppBar() {
     color: "black",
     border: "none",
   };
+
+  const handleLogout = ()=>{
+    logout();
+    logOut();
+    navigate("/login")
+  }
 
   return (
     <AppBar
@@ -232,19 +242,21 @@ function MyAppBar() {
                 className={styles.appbar_menuitem}
               >
                 {isLoggedIn?<Link to="/account">
-                  <Typography textAlign="center">Account</Typography>
+                  <Typography textAlign="center">Trade</Typography>
                 </Link> : <Link to="/sign-up">
                   <Typography textAlign="center">Sign Up</Typography>
                 </Link>}
               </MenuItem>
+              {isLoggedIn &&
               <MenuItem
                 onClick={handleCloseUserMenu}
                 className={styles.appbar_menuitem}
               >
-                {isLoggedIn?<Link to="/account">
-                  <Typography textAlign="center">Logout</Typography>
-                </Link> : ""}
+                 <Link >
+                  <Typography textAlign="center" onClick={handleLogout}>Logout</Typography>
+                </Link> 
               </MenuItem>
+              }
             </Menu>
           </Box>
         </Toolbar>

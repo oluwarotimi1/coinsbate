@@ -18,7 +18,7 @@ const SignUpForm = ({ setActiveTab }) => {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
 
-  const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}$/;
+  // const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}$/;
   // min 4 characters, 1 upper case letter, 1 lower case letter, 1 numeric digit.
 
   const handleBack = () => {
@@ -40,9 +40,6 @@ const SignUpForm = ({ setActiveTab }) => {
     email: yup.string().email().required("Enter Email Address"),
     password: yup
       .string()
-      .matches(passwordRules, {
-        message: "Weak Password; Make password alphanumeric",
-      })
       .required("Password feild is empty"),
   });
 

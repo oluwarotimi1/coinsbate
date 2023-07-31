@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const Login = () => {
-  const { setIsLoggedIn } = useContext(UserContext);
+  const { setIsLoggedIn } = useContext(UserContext); 
   const [showPassword, setShowPassword] = useState(false);
   const [severity, setSeverity] = useState("");
   const [open, setOpen] = useState(false);
@@ -44,6 +44,7 @@ const Login = () => {
     .then(() => {
       setIsLoggedIn(true);
       navigate("/dashboard");
+      
     })
     .then(() => {
       setMessage("Success");
