@@ -1,0 +1,50 @@
+.create_proceed_btn {
+    margin: 8px 0;
+    color: #000;
+    background: #fff;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 0.1px solid rgb(171, 169, 169);
+    padding: 0.5em 4rem;
+    cursor: pointer;
+    border-radius: 0.3rem;
+  }
+  .create_proceed_btn:hover{
+    color: #fff;
+    background: #000;
+    border: 0.1px solid rgb(171, 169, 169);
+  }
+  .buy_sell_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+  }
+  .modal_btn_buy{
+    padding: 0.6rem 3rem;
+    border: 0.1px solid rgb(171, 169, 169);
+    border-radius: 1rem;
+    margin: 0.5rem;
+    color: #000;
+    background: #fff;
+  }
+  .modal_btn_buy:hover{
+    color: #fff;
+    background: #000;
+    border: 0.1px solid rgb(171, 169, 169);
+  }
+  .modal_btn_sell{
+    padding: 0.6rem 3rem;
+    border: 0.1px solid rgb(171, 169, 169);
+    border-radius: 1rem;
+    margin: 0.5rem;
+    color: #fff;
+    background: #222222;
+  }
+  .modal_btn_sell:hover{
+    color: #000;
+    background: #fff;
+  }

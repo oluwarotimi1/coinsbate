@@ -1,0 +1,17 @@
+.buysection_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-white);
+    border-radius: 4px;
+}
+.buysection_colone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.buysection_coltwo{
+    display: flex;
+    justify-content: flex-end;
+}
