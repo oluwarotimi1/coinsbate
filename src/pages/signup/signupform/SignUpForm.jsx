@@ -11,9 +11,13 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../../auth/firebase/firebase";
 import SnackBar from "../../../components/snackbar/SnackBar";
 import { UserContext } from "../../../components/context/UserContext";
+import { CircularProgress } from "@mui/material";
+import MyBtn from "../../../components/buttons/MyBtn";
 
 const SignUpForm = ({ setActiveTab }) => {
+  const { logIn } = useContext(UserContext);
   const { setIsLoggedIn } = useContext(UserContext);
+  const [loading, setLoading] = useState(false);
   const [severity, setSeverity] = useState("");
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
@@ -38,9 +42,7 @@ const SignUpForm = ({ setActiveTab }) => {
   const schema = yup.object({
     displayName: yup.string().required("Diasplay Name is required"),
     email: yup.string().email().required("Enter Email Address"),
-    password: yup
-      .string()
-      .required("Password feild is empty"),
+    password: yup.string().required("Password field is empty"),
   });
 
   const {
@@ -52,6 +54,7 @@ const SignUpForm = ({ setActiveTab }) => {
   });
 
   const onSubmit = async (data) => {
+    setLoading(true);
     await createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -65,7 +68,9 @@ const SignUpForm = ({ setActiveTab }) => {
         })
           .then(() => {
             setIsLoggedIn(true);
-            // navigate("/products");
+            localStorage.setItem("token", user.uid);
+            localStorage.setItem("isLoggedIn", true);
+            logIn();
             setActiveTab("verification");
           })
           .then(() => {
@@ -80,6 +85,7 @@ const SignUpForm = ({ setActiveTab }) => {
         setMessage(errorMessage);
         setSeverity("error");
         setOpen(true);
+        setLoading(false);
       });
   };
 
@@ -149,11 +155,29 @@ const SignUpForm = ({ setActiveTab }) => {
             {...register("phoneNumber", { required: false })}
           />
         </div>
-        <input
-          style={{ width: "100%", marginTop: "2rem", padding: "14px" }}
-          className={styles.create_proceed_btn}
-          type="submit"
-        />
+        {loading ? (
+            <MyBtn
+              children={
+                <CircularProgress
+                  size={22}
+                  style={{
+                    color: "var(--color-primary)",
+                    textAlign: "center",
+                    
+                  }}
+                  
+                />
+              }
+              style={{ width: "100%", marginTop: "2rem", padding: "14px",cursor: "not-allowed", }}
+              type="submit"
+            />
+          )  : (
+          <input
+            style={{ width: "100%", marginTop: "2rem", padding: "14px" }}
+            className={styles.create_proceed_btn}
+            type="submit"
+          />
+        )}
       </form>
 
       <p style={{ margin: "1rem 0", fontSize: "0.87rem" }}>
