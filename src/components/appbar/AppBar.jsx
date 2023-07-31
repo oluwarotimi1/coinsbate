@@ -15,8 +15,11 @@ import { Link } from "react-router-dom";
 import styles from "./appbar.module.css";
 import { CgProfile } from "react-icons/cg";
 import BasicAccordion from "../accordion/BasicAccordion";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 function MyAppBar() {
+  const {isLoggedIn} = useContext(UserContext); 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -217,33 +220,30 @@ function MyAppBar() {
                 onClick={handleCloseUserMenu}
                 className={styles.appbar_menuitem}
               >
-                <Link to="/profile">
+                {isLoggedIn?<Link to="/profile">
                   <Typography textAlign="center">Profile</Typography>
-                </Link>
-              </MenuItem>
-              <MenuItem
-                onClick={handleCloseUserMenu}
-                className={styles.appbar_menuitem}
-              >
-                <Link to="/account">
-                  <Typography textAlign="center">Account</Typography>
-                </Link>
-              </MenuItem>
-              <MenuItem
-                onClick={handleCloseUserMenu}
-                className={styles.appbar_menuitem}
-              >
-                <Link to="/login">
+                </Link> : <Link to="/login">
                   <Typography textAlign="center">Login</Typography>
-                </Link>
+                </Link> }
+                
               </MenuItem>
               <MenuItem
                 onClick={handleCloseUserMenu}
                 className={styles.appbar_menuitem}
               >
-                <Link to="/sign-up">
+                {isLoggedIn?<Link to="/account">
+                  <Typography textAlign="center">Account</Typography>
+                </Link> : <Link to="/sign-up">
                   <Typography textAlign="center">Sign Up</Typography>
-                </Link>
+                </Link>}
+              </MenuItem>
+              <MenuItem
+                onClick={handleCloseUserMenu}
+                className={styles.appbar_menuitem}
+              >
+                {isLoggedIn?<Link to="/account">
+                  <Typography textAlign="center">Logout</Typography>
+                </Link> : ""}
               </MenuItem>
             </Menu>
           </Box>

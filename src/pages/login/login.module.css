@@ -1,6 +1,6 @@
 .login_container {
-  margin-top: 5rem;
-  height: 80vh;
+  margin-top: 2rem;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,8 +13,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 380px;
-  height: 450px;
+  min-width: 380px;
+  min-height: 450px;
 }
 .login_section h1 {
   margin-bottom: 2rem;
