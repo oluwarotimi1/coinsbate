@@ -27,6 +27,14 @@ const Login = () => {
   const toggleShowPassword = () => {
     setShowPassword((prevShowEyes) => !prevShowEyes);
   };
+  function wait(duration) {
+    return new Promise((resolve) => setTimeout(resolve, duration));
+  }
+  function success() {
+    wait(1500).then(() => {
+      navigate("/dashboard");
+    });
+  }
   const schema = yup.object({
     email: yup.string().email().required("Enter Email Address"),
     password: yup.string().required("Password feild is empty"),
@@ -47,22 +55,21 @@ const Login = () => {
         localStorage.setItem("token", user.uid);
         localStorage.setItem("isLoggedIn", true);
         logIn();
-        navigate("/dashboard");
-      })
-      .then(() => {
-        setMessage("Success");
+        setMessage("Success Login");
         setSeverity("success");
         setOpen(true);
+        success();
       })
       .catch((error) => {
         const errorMessage = error.message;
         setMessage(errorMessage);
         setSeverity("error");
         setOpen(true);
+        setIsLoading(false);
       });
     setIsLoading(false);
   };
-  if(loadingUser){
+  if (loadingUser) {
     return (
       <div
         style={{
@@ -76,7 +83,7 @@ const Login = () => {
         {" "}
         <CircularProgress size={30} style={{ color: "var(--color-primary)" }} />
       </div>
-    )
+    );
   }
   return (
     <div className={`${styles.login_container} `}>
@@ -136,12 +143,15 @@ const Login = () => {
                   style={{
                     color: "var(--color-primary)",
                     textAlign: "center",
-                    
                   }}
-                  
                 />
               }
-              style={{ width: "100%", marginTop: "2rem", padding: "14px",cursor: "not-allowed", }}
+              style={{
+                width: "100%",
+                marginTop: "2rem",
+                padding: "14px",
+                cursor: "not-allowed",
+              }}
               type="submit"
             />
           ) : (

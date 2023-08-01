@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import styles from "./verification.module.css";
 import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../../components/context/UserContext";
 
 const Verification = () => {
+  const {user} = useContext(UserContext); 
   const navigate = useNavigate();
   const emailInputRef = useRef(null);
 
@@ -25,10 +27,12 @@ const Verification = () => {
             name="email"
             className={styles.email_input}
             ref={emailInputRef}
+            value={user.email}
           />
           <p style={{ margin: "1rem 0", fontSize: "0.87rem", color: 'var(--color-primary)' }}>
             Verification Link will be sent to this email{" "}
           </p>
+          
         </div>
         <button
           onClick={handleVerify}
@@ -36,7 +40,7 @@ const Verification = () => {
           className={styles.create_proceed_btn}
           type="submit"
         >
-          Verifiy Email
+         Send Verification Email
         </button>
         <p style={{ margin: "1rem 0", fontSize: "0.87rem" }}>
           Verify Email Later,

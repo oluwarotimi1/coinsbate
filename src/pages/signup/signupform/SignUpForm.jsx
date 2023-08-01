@@ -28,7 +28,9 @@ const SignUpForm = ({ setActiveTab }) => {
   const handleBack = () => {
     setActiveTab("create");
   };
-
+  function wait(duration){
+    return new Promise((resolve)=>setTimeout(resolve, duration));
+  }
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
@@ -52,6 +54,11 @@ const SignUpForm = ({ setActiveTab }) => {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  function success(){
+    wait(2000).then(()=>{
+      setActiveTab("verification")
+    })
+  }
 
   const onSubmit = async (data) => {
     setLoading(true);
@@ -71,13 +78,11 @@ const SignUpForm = ({ setActiveTab }) => {
             localStorage.setItem("token", user.uid);
             localStorage.setItem("isLoggedIn", true);
             logIn();
-            setActiveTab("verification");
-          })
-          .then(() => {
-            setMessage("Success");
+            setMessage("Account Successfully Created");
             setSeverity("success");
             setOpen(true);
-          });
+            success();
+          })
       })
       .catch((error) => {
         // const errorCode = error.code;
