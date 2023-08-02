@@ -9,6 +9,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import PrivateRoute from "./components/privateroute/PrivateRoute";
 import { useContext } from "react";
 import { UserContext } from "./components/context/UserContext";
+import ForgotPassword from "./pages/forgotpassword/ForgotPassword";
 
 function App() {
   const { isLoggedIn } = useContext(UserContext);
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         <Route
           path="/dashboard"

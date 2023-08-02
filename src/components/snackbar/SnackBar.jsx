@@ -20,7 +20,7 @@ const SnackBar = ({ severity, open, setOpen, message, duration }) => {
   return (
     <Snackbar
       open={open}
-      autoHideDuration={duration || 6000}
+      autoHideDuration={duration || 8000}
       onClose={handleClose}
     >
       <Alert onClose={handleClose} severity={severity} sx={{ width: "100%" }}>

@@ -178,7 +178,7 @@ function MyAppBar() {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <Link to="/features">Features</Link>
+              <Link to="/dashboard">Features</Link>
             </Button>
             <Button
               onClick={handleCloseNavMenu}
@@ -241,7 +241,7 @@ function MyAppBar() {
                 onClick={handleCloseUserMenu}
                 className={styles.appbar_menuitem}
               >
-                {isLoggedIn?<Link to="/account">
+                {isLoggedIn?<Link to="/dashboard">
                   <Typography textAlign="center">Trade</Typography>
                 </Link> : <Link to="/sign-up">
                   <Typography textAlign="center">Sign Up</Typography>

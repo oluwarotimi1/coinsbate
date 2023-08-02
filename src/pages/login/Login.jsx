@@ -15,7 +15,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { CircularProgress } from "@mui/material";
 
 const Login = () => {
-  // const { setIsLoggedIn } = useContext(UserContext);
+  // const { user } = useContext(UserContext);
   const [loading, setIsLoading] = useState(false);
   const { logIn, loadingUser } = useContext(UserContext);
   const [showPassword, setShowPassword] = useState(false);
@@ -106,7 +106,7 @@ const Login = () => {
             <div className={styles.login_password_label}>
               <label htmlFor="email">Password</label>
               <Link
-                to=""
+                to="/forgot-password"
                 style={{
                   textDecoration: "none",
                   color: "var(--color-primary)",
@@ -135,7 +135,8 @@ const Login = () => {
               <span style={{ color: "red" }}>{errors?.password?.message}</span>
             </p>
           </div>
-          {loading ? (
+          
+          {loading? (
             <MyBtn
               children={
                 <CircularProgress
