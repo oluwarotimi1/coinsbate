@@ -1,21 +1,21 @@
 import React, { useContext, useState } from "react";
 import styles from "./login.module.css";
-// import { Container } from "react-bootstrap";
 import MyBtn from "../../components/buttons/MyBtn";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import SnackBar from "../../components/snackbar/SnackBar";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../auth/firebase/firebase";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../../auth/firebase/firebase";
 import { UserContext } from "../../components/context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { CircularProgress } from "@mui/material";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  // const { user } = useContext(UserContext);
+  // const [value, setvalue] = useState("");
   const [loading, setIsLoading] = useState(false);
   const { logIn, loadingUser } = useContext(UserContext);
   const [showPassword, setShowPassword] = useState(false);
@@ -66,8 +66,9 @@ const Login = () => {
         setSeverity("error");
         setOpen(true);
         setIsLoading(false);
+        setIsLoading(false);
       });
-    setIsLoading(false);
+    
   };
   if (loadingUser) {
     return (
@@ -85,6 +86,25 @@ const Login = () => {
       </div>
     );
   }
+
+  function handleLoginGoogle() {
+    signInWithPopup(auth, provider)
+      .then((data) => {
+        // setvalue(data.user.email);
+        localStorage.setItem("email", data.user.email);
+        localStorage.setItem("token", data.uid);
+        localStorage.setItem("isLoggedIn", true);
+        navigate("/dashboard");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setMessage(errorMessage);
+        setSeverity("error");
+        setOpen(true);
+        setIsLoading(false);
+      });
+  }
+
   return (
     <div className={`${styles.login_container} `}>
       <form className={styles.login_form} onSubmit={handleSubmit(onSubmit)}>
@@ -98,7 +118,7 @@ const Login = () => {
               className={styles.email_input}
               {...register("email", { required: true })}
             />
-            <p style={{ margin: "1rem 0", fontSize: "0.87rem" }}>
+            <p style={{ margin: "0.3rem 0", fontSize: "0.87rem" }}>
               <span style={{ color: "red" }}>{errors?.email?.message}</span>
             </p>
           </div>
@@ -131,12 +151,12 @@ const Login = () => {
                 )}
               </span>
             </div>
-            <p style={{ margin: "1rem 0", fontSize: "0.87rem" }}>
+            <p style={{ margin: "0.3rem 0", fontSize: "0.87rem" }}>
               <span style={{ color: "red" }}>{errors?.password?.message}</span>
             </p>
           </div>
-          
-          {loading? (
+
+          {loading ? (
             <MyBtn
               children={
                 <CircularProgress
@@ -163,6 +183,15 @@ const Login = () => {
             />
           )}
         </div>
+        <div
+        onClick={handleLoginGoogle}
+        style={{ width: "340px", marginTop: "2rem", padding: "14px",cursor: 'not-allowed' }}
+        aria-disabled
+        className={styles.create_proceed_btn}
+        
+      >
+        Sign in with Google <FcGoogle size={22} />
+      </div>
 
         <p style={{ margin: "1rem 0", fontSize: "0.87rem" }}>
           Don’t have an account?{" "}
@@ -178,6 +207,8 @@ const Login = () => {
           </Link>
         </p>
       </form>
+      
+
       <SnackBar
         severity={severity}
         open={open}

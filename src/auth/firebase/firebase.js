@@ -7,6 +7,7 @@ import {
 //   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAKDqSx93tV8uQQK-wpvjAKw4dDMDQrP9s",
@@ -44,3 +45,4 @@ export function useAuth() {
   }, []);
   return currentUser;
 }
+export const provider = new GoogleAuthProvider();
