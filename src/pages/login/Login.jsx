@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { CircularProgress } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
+import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 const Login = () => {
   // const [value, setvalue] = useState("");
@@ -174,6 +175,7 @@ const Login = () => {
                 cursor: "not-allowed",
               }}
               type="submit"
+              disabled={isDisabled}
             />
           ) : (
             <MyBtn

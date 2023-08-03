@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
-import styles from './portfolio.module.css'
-import {UserContext} from './../../context/UserContext'
+import React, { useContext, useEffect, useState } from "react";
+import styles from "./portfolio.module.css";
+import { UserContext } from "./../../context/UserContext";
 
 const PortfoilioSection = () => {
-  const {user} = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const verifiedStatus = user?.verified
   const [verifiedUser, setVerifiedUser] = useState("Not Verified");
 
@@ -16,14 +16,16 @@ const PortfoilioSection = () => {
       // console.log("No such document!");
     }
   },[verifiedStatus])
+
   return (
     <div className={styles.portfolio_container}>
       Portfoilio section <br />
-      Display Name: {user?.displayName}<br />
-      {/* Verified Status: {verifiedStatus.toString()} */}
+      Display Name: {user?.displayName}
+      <br />
       Verification Status : {verifiedUser}
+      
     </div>
-  )
-}
+  );
+};
 
-export default PortfoilioSection
+export default PortfoilioSection;
