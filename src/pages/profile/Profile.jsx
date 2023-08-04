@@ -13,6 +13,7 @@ const Profile = () => {
     const [verifiedStatus, setVerificationStatus] = useState("Not Verified")
 
     useEffect(()=>{
+        window.scrollTo(0, 0);
         if(verifiedUser){
             setVerificationStatus("Verified")
         }

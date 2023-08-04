@@ -40,7 +40,7 @@ const UserProvider = (props) => {
       // console.log("No such document!");
     }
   };
-  
+
   useEffect(() => {
     if (VerifiedStatus === true) {
       setVerifiedUser(true);
@@ -58,7 +58,7 @@ const UserProvider = (props) => {
   useEffect(() => {
     const logoutTimeOut = setTimeout(() => {
       logOut();
-    }, 3600000);
+    }, 1800000);
     return () => {
       clearTimeout(logoutTimeOut);
     };
