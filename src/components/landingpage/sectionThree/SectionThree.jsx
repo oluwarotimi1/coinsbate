@@ -8,6 +8,7 @@ import { LiaViacoin } from "react-icons/lia";
 
 const SectionThree = () => {
   const [price, setPrice] = useState(null);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -25,6 +26,7 @@ const SectionThree = () => {
         });
     }, [2000]);
   }, []);
+  
   return (
     <div className={`${styles.sectionthree_container} `}>
       <Container>

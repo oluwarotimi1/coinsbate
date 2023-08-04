@@ -9,7 +9,9 @@ import { useNavigate } from "react-router-dom";
 const SectionOne = () => {
   const navigate = useNavigate("");
   const [price, setPrice] = useState(null);
+  const [percentage, setPercentage] = useState("");
   const [loading, setLoading] = useState(true);
+  const [previousPrice, setPreviousPrice] = useState(null);
 
   const BuyButtonStyle = {
     background: "linear-gradient(96.17deg, #aa85fa -2.71%, #ff4a9b 108.06%)",
@@ -34,14 +36,26 @@ const SectionOne = () => {
         .then((data) => {
           // console.log(data);
           setPrice(data.USD.last);
-          setLoading(false)
+          setLoading(false);
         })
         .catch((error) => {
           console.log(error);
-          setLoading(false)
+          setLoading(false);
         });
     }, [2000]);
   }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (previousPrice !== null && price > previousPrice) {
+        setPercentage("Green");
+      } else setPercentage("Red");
+    }, 2000);
+
+    return () => {
+      setPreviousPrice(price);
+      clearInterval(interval);
+    };
+  }, [price, previousPrice]);
   return (
     <div className={`${styles.sectione_container}`}>
       <div className={`${styles.sectione_section} container`}>
@@ -76,8 +90,14 @@ const SectionOne = () => {
                   </span>
                   <span className={styles.btc_title}>Bitcoin </span>
                   <span className={styles.btc}>BTC</span>
-                  {/* <span className={styles.btc_pnl}> -0.49%</span> */}
-                  <span className={styles.btc_value}> {loading? "...": "$" + price}</span>
+                  {/* <span className={styles.btc_pnl}> {percentage}</span> */}
+                  <span
+                    className={styles.btc_value}
+                    style={{ color: percentage === "Green" ? "green" : "red" }}
+                  >
+                    {" "}
+                    {loading ? "..." : "$" + price}
+                  </span>
                   <MyBtn
                     style={BuyButtonStyle}
                     handleCLick={handleTradeNow}

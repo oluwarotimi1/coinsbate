@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
-import { useNavigate } from 'react-router-dom';
-import { db } from '../../auth/firebase/firebase';
+import { useNavigate } from "react-router-dom";
+import { db } from "../../auth/firebase/firebase";
 export const UserContext = React.createContext();
 
 const UserProvider = (props) => {
@@ -12,15 +12,15 @@ const UserProvider = (props) => {
     JSON.parse(localStorage.getItem("isLoggedIn"))
   );
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(isLoggedIn);
-    if(isLoggedIn){
-      handleGetUser(localStorage.getItem("token"))
-      setLoadingUser(false)
-    }else{
+    if (isLoggedIn) {
+      handleGetUser(localStorage.getItem("token"));
+      setLoadingUser(false);
+    } else {
       setLoadingUser(false);
     }
-  },[isLoggedIn])
+  }, [isLoggedIn]);
 
   const handleGetUser = async (id) => {
     setLoadingUser(true);
@@ -28,31 +28,38 @@ const UserProvider = (props) => {
     //The docSnap below code is actually not neccesary for auth.. Basically for chat system
     const docRef = doc(db, "users", id);
     const docSnap = await getDoc(docRef);
-//
+    //
     if (docSnap.exists()) {
       setUser(docSnap.data());
       setLoadingUser(false);
       // console.log("Document data:", docSnap.data());
     } else {
       // doc.data() will be undefined in this case
-      
       // console.log("No such document!");
     }
   };
-  const logIn = ()=>{
+  const logIn = () => {
     setIsLoggedIn(true);
-  }
-  const logOut = () => {
+  };
+  const logOut = useCallback(() => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("token");
     setIsLoggedIn(false);
-    navigate("/login")
-  };
+    navigate("/login");
+  }, [setIsLoggedIn, navigate]);
+  useEffect(() => {
+    const logoutTimeOut = setTimeout(() => {
+      logOut();
+    }, 3600000);
+    return () => {
+      clearTimeout(logoutTimeOut);
+    };
+  }, [logOut, isLoggedIn]);
 
   return (
     <UserContext.Provider
-    value={{
-      user,
+      value={{
+        user,
         setUser,
         loadingUser,
         setLoadingUser,
@@ -61,12 +68,11 @@ const UserProvider = (props) => {
         isLoggedIn,
         setIsLoggedIn,
         logIn,
-
-    }}
+      }}
     >
       {props.children}
     </UserContext.Provider>
-  )
-}
+  );
+};
 
 export default UserProvider;

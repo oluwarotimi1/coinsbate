@@ -10,6 +10,7 @@ import PrivateRoute from "./components/privateroute/PrivateRoute";
 import { useContext } from "react";
 import { UserContext } from "./components/context/UserContext";
 import ForgotPassword from "./pages/forgotpassword/ForgotPassword";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   const { isLoggedIn } = useContext(UserContext);
@@ -29,7 +30,14 @@ function App() {
               <Dashboard />
             </PrivateRoute>
           }
-        />
+        /><Route
+        path="/profile"
+        element={
+          <PrivateRoute auth={isLoggedIn}>
+            <Profile />
+          </PrivateRoute>
+        }
+      />
       </Routes>
       <Footer />
     </>
