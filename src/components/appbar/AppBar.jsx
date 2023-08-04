@@ -206,7 +206,7 @@ function MyAppBar() {
               <IconButton
                 onClick={handleOpenUserMenu}
                 sx={{ p: 0, color: "white" }}
-              ><span style={{fontSize:'1rem'}}>{user?.displayName}</span>
+              ><span style={{fontSize:'1rem'}}>{isLoggedIn && user?.displayName}</span>
                 <CgProfile />
               </IconButton>
             </Tooltip>
