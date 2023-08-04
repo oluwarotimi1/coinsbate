@@ -1,0 +1,7 @@
+.buy_select{
+    min-width:200px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: 1px solid var(--color-primary);
+}

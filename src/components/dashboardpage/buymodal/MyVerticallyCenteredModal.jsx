@@ -20,7 +20,7 @@ function MyVerticallyCenteredModal(props) {
         </div>
       
       <Modal.Body>
-        <h4>Centered Modal</h4>
+        {/* <h4>Centered Modal</h4> */}
         <BuyModalTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       </Modal.Body>
       <Modal.Footer style={{textAlign:'center'}}>

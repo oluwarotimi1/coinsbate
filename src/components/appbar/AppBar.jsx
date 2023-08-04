@@ -26,6 +26,7 @@ function MyAppBar() {
   const navigate = useNavigate('')
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const {user} = useContext(UserContext);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -205,7 +206,7 @@ function MyAppBar() {
               <IconButton
                 onClick={handleOpenUserMenu}
                 sx={{ p: 0, color: "white" }}
-              >
+              ><span style={{fontSize:'1rem'}}>{user?.displayName}</span>
                 <CgProfile />
               </IconButton>
             </Tooltip>
