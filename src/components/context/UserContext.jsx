@@ -11,6 +11,8 @@ const UserProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     JSON.parse(localStorage.getItem("isLoggedIn"))
   );
+  const VerifiedStatus = user?.verified;
+  const [verifiedUser, setVerifiedUser] = useState(null);
 
   useEffect(() => {
     console.log(isLoggedIn);
@@ -38,6 +40,12 @@ const UserProvider = (props) => {
       // console.log("No such document!");
     }
   };
+  
+  useEffect(() => {
+    if (VerifiedStatus === true) {
+      setVerifiedUser(true);
+    }
+  }, [VerifiedStatus]);
   const logIn = () => {
     setIsLoggedIn(true);
   };
@@ -68,6 +76,7 @@ const UserProvider = (props) => {
         isLoggedIn,
         setIsLoggedIn,
         logIn,
+        verifiedUser,
       }}
     >
       {props.children}

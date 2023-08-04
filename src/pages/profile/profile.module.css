@@ -1,3 +1,17 @@
-.profile_container{
-    height: 80vh;
+.profile_container {
+  margin-top: 7rem;
+  min-height: 80vh;
+  max-width: 600px;
+  width: 100%;
+}
+.profile_section {
+    width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.listgroup a{
+    text-decoration: none;
+    color: var(--color-primary);
 }

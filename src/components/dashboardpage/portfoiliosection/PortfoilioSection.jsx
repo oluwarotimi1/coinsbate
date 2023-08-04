@@ -1,29 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext }  from "react";
 import styles from "./portfolio.module.css";
-import { UserContext } from "./../../context/UserContext";
+import { UserContext } from "../../context/UserContext";
 
 const PortfoilioSection = () => {
-  const { user } = useContext(UserContext);
-  const verifiedStatus = user?.verified
-  const [verifiedUser, setVerifiedUser] = useState("Not Verified");
-
-  useEffect(()=>{
-    if(verifiedStatus === true){
-      setVerifiedUser("Verifed")
-    }else {
-      // doc.data() will be undefined in this case
-      
-      // console.log("No such document!");
-    }
-  },[verifiedStatus])
-
+  const {user} = useContext(UserContext)
   return (
     <div className={styles.portfolio_container}>
-      Portfoilio section <br />
-      Display Name: {user?.displayName}
-      <br />
-      Verification Status : {verifiedUser}
-      
+      Hello {user?.displayName}, This site is still currently under Maintenance
     </div>
   );
 };
