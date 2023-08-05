@@ -1,4 +1,5 @@
 .dashboard_container{
     margin-top: 5rem;
-    height: 100vh;
+
+    min-height: 120vh;
 }

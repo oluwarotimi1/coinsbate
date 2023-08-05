@@ -4,6 +4,7 @@ import { UserContext } from "../../context/UserContext";
 import { useQuery } from "@tanstack/react-query";
 import { getBtc } from "./../../api/getApi";
 import { Col, Container, Row } from "react-bootstrap";
+import SectionThree from "../../landingpage/sectionThree/SectionThree";
 
 const PortfoilioSection = () => {
   // function wait(duration) {
@@ -24,7 +25,9 @@ const PortfoilioSection = () => {
     <div className={`${styles.portfolio_container} container mt-3`}>
       <Container>
         <Row>
-          <Col></Col>
+          <Col>
+          <SectionThree />
+          </Col>
         </Row>
         <Row>
           <Col>
