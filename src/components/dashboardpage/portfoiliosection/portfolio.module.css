@@ -1,6 +1,7 @@
 .portfolio_container{
-    height: 80vh;
+    height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: var(--color-white);
 }
