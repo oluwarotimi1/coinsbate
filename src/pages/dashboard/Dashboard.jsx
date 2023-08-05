@@ -14,7 +14,7 @@ const Dashboard = () => {
   const getPost = [{ id: 1 }];
   const loadDashboard = useQuery({
     queryKey: ["load"],
-    queryFn: () => wait(5000).then(() => [...getPost]),
+    queryFn: () => wait(0).then(() => [...getPost]),
   });
   if (loadDashboard.isLoading) {
     return (
@@ -42,6 +42,7 @@ const Dashboard = () => {
       <div className={`${styles.dashboard_section}container`}>
         <BuySection />
         <PortfoilioSection />
+        
       </div>
     </div>
   );

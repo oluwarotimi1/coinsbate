@@ -33,6 +33,7 @@ const UserProvider = (props) => {
     //
     if (docSnap.exists()) {
       setUser(docSnap.data());
+      // console.log(docSnap.data())
       setLoadingUser(false);
       // console.log("Document data:", docSnap.data());
     } else {

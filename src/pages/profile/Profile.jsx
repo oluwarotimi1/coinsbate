@@ -84,7 +84,7 @@ const Profile = () => {
               {verifiedStatus}
             </Badge>
           </ListGroup.Item>
-        </ListGroup> 
+        </ListGroup>
         <br />
         <h5>Previous Transaction</h5>
         <ListGroup as="ul" className={styles.listgroup}>
@@ -94,13 +94,15 @@ const Profile = () => {
           >
             <div className="ms-2 me-auto">
               <h5 className="fw-bold">No Previous Transaction yet</h5>
-              <Link to="/dashboard"><h5>Trade Now</h5></Link>
+              <Link to="/dashboard">
+                <h5>Trade Now</h5>
+              </Link>
             </div>
             {/* <Badge bg="primary" pill>
               {user?.email}
             </Badge> */}
           </ListGroup.Item>
-          </ListGroup>
+        </ListGroup>
       </div>
     </div>
   );

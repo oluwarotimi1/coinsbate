@@ -14,6 +14,7 @@ import Profile from "./pages/profile/Profile";
 
 function App() {
   const { isLoggedIn } = useContext(UserContext);
+  
   return (
     <>
       <MyAppBar />
