@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const SectionOne = () => {
   const navigate = useNavigate("");
-  const [price, setPrice] = useState(null);
+  const [price, setPrice] = useState("...");
   const [percentage, setPercentage] = useState("");
   const [loading, setLoading] = useState(true);
   const [previousPrice, setPreviousPrice] = useState(null);

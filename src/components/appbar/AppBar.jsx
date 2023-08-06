@@ -5,48 +5,37 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 import styles from "./appbar.module.css";
 import { CgProfile } from "react-icons/cg";
-import BasicAccordion from "../accordion/BasicAccordion";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { logout } from "../../auth/firebase/firebase";
 import { useNavigate } from "react-router-dom";
-
 function MyAppBar() {
   const {logOut} = useContext(UserContext)
   const {isLoggedIn} = useContext(UserContext); 
   const navigate = useNavigate('')
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const {user} = useContext(UserContext);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
 
-  const FeaturesStyles = {
-    color: "black",
-    border: "none",
-  };
+  const displayName =()=>{
+    if(user){
+      return user.displayName
+      
+    }
+  }
 
   const handleLogout = ()=>{
     logout();
@@ -67,8 +56,8 @@ function MyAppBar() {
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+        <Toolbar disableGutters className={styles.toolbar}>
+          <span>
           <Typography
             variant="h6"
             noWrap
@@ -86,76 +75,7 @@ function MyAppBar() {
           >
             <Link to="/">RegXchange</Link>
           </Typography>
-
-          <Box
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-            className={styles.appbar_box}
-          >
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-              className={styles.appbar_menu}
-            >
-              <MenuItem className={styles.appbar_menuitem}>
-                <Typography textAlign="center">
-                  {" "}
-                  <BasicAccordion parent="Features" style={FeaturesStyles} />
-                </Typography>
-              </MenuItem>
-              <MenuItem
-                onClick={handleCloseNavMenu}
-                className={styles.appbar_menuitem}
-              >
-                <Typography textAlign="center">
-                  {" "}
-                  <Link to="/prices">Prices</Link>
-                </Typography>
-              </MenuItem>
-              <MenuItem
-                onClick={handleCloseNavMenu}
-                className={styles.appbar_menuitem}
-              >
-                <Typography textAlign="center">
-                  {" "}
-                  <Link to="/institution">Institutions</Link>
-                </Typography>
-              </MenuItem>
-              <MenuItem
-                onClick={handleCloseNavMenu}
-                className={styles.appbar_menuitem}
-              >
-                <Typography textAlign="center">
-                  {" "}
-                  <Link to="/more">More</Link>
-                </Typography>
-              </MenuItem>
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -174,39 +94,15 @@ function MyAppBar() {
           >
             <Link to="/">RegXchange</Link>
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              <Link to="/dashboard">Features</Link>
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              <Link to="/prices">Prices</Link>
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              <Link to="/institution">Institution</Link>
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              <Link to="/more">More</Link>
-            </Button>
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
+          </span>
+         
+         <span>
+         <Box sx={{ flexGrow: 0 }}>
             <Tooltip>
               <IconButton
                 onClick={handleOpenUserMenu}
                 sx={{ p: 0, color: "white" }}
-              ><span style={{fontSize:'1rem'}}>{isLoggedIn && user?.displayName}</span>
+              ><span style={{fontSize:'1rem', margin: '0rem 0.5rem'}}>{isLoggedIn? displayName() : null}</span>
                 <CgProfile />
               </IconButton>
             </Tooltip>
@@ -260,6 +156,9 @@ function MyAppBar() {
               }
             </Menu>
           </Box>
+         </span>
+
+          
         </Toolbar>
       </Container>
     </AppBar>

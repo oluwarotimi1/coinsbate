@@ -3,17 +3,20 @@
     text-decoration: none;
     
 }
-.appbar_conatiner{
-    
+.appbar_conatiner{  
     border-bottom: 0.1px solid rgba(255, 255, 255, 0.239);
 }
 .appbar_menuitem a{
     text-decoration: none;
     color: var(--color-dark);
     display: flex;
-    /* justify-content: flex-start;
-    padding: 1rem 3rem 1rem 0; */
 }
 .appbar_menuitem a:hover{
     color: var(--color-primary);
+}
+.toolbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
 }
