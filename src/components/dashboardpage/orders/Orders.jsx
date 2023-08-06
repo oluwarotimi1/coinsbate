@@ -33,7 +33,7 @@ const Orders = () => {
         <OrderTabs activeRow={activeRow} setActiveRow={setActiveRow} />
         <Row>
           <Col className={styles.ordersection_col}>
-            <App title="Buy Crypto" />
+            <App title="Buy/Sell Coin" />
           </Col>
         </Row>
       </Container>
