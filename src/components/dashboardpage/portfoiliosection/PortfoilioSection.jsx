@@ -16,7 +16,7 @@ const PortfoilioSection = () => {
         </Container>
       </div>
 
-      <div className={`${styles.portfolio_container} container mt-3`}>
+      <div className={`${styles.portfolio_container} container mt-3 mb-3`}>
         <Container>
           <Row>
             <Col></Col>
