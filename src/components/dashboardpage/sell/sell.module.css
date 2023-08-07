@@ -1,7 +1,10 @@
 .sell_select{
-    min-width:200px;
+    min-width:100%;
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
     outline: 1px solid var(--color-primary);
+}
+.div_input{
+    width: 100%;
 }

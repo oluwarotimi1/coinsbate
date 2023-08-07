@@ -23,9 +23,9 @@ function MyVerticallyCenteredModal(props) {
         {/* <h4>Centered Modal</h4> */}
         <BuyModalTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       </Modal.Body>
-      <Modal.Footer style={{textAlign:'center'}}>
+      {/* <Modal.Footer style={{textAlign:'center'}}>
         <Button onClick={props.onHide} >Proceed</Button>
-      </Modal.Footer>
+      </Modal.Footer> */}
     </Modal>
   );
 }
