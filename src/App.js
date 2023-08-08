@@ -11,10 +11,12 @@ import { useContext } from "react";
 import { UserContext } from "./components/context/UserContext";
 import ForgotPassword from "./pages/forgotpassword/ForgotPassword";
 import Profile from "./pages/profile/Profile";
+import AdminDashboard from "./pagesadmin/admindashboard/AdminDashboard";
 
 function App() {
   const { isLoggedIn } = useContext(UserContext);
-  
+  const { isBaseUID } = useContext(UserContext);
+
   return (
     <>
       <MyAppBar />
@@ -31,15 +33,25 @@ function App() {
               <Dashboard />
             </PrivateRoute>
           }
-        /><Route
-        path="/profile"
-        element={
-          <PrivateRoute auth={isLoggedIn}>
-            <Profile />
-          </PrivateRoute>
-        }
-      />
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute auth={isLoggedIn}>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <PrivateRoute auth={isBaseUID}>
+              <AdminDashboard />
+            </PrivateRoute>
+          }
+        />
       </Routes>
+      
       <Footer />
     </>
   );

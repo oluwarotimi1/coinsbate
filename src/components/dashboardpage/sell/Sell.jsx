@@ -41,7 +41,6 @@ const Sell = () => {
     password: yup.string().required("Password feild is empty"),
   });
   const {
-    register,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -93,7 +92,6 @@ const Sell = () => {
             type="text"
             onChange={handleQunatitySell}
             value={inputQuantity}
-            {...register("inputQuantity", {required:true})}
           />
           <p style={{ margin: "0.3rem 0", fontSize: "0.87rem" }}>
               <span style={{ color: "red" }}>{errors?.inputQuantity?.message}</span>

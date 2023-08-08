@@ -4,7 +4,6 @@ import {
   getAuth,
   signOut,
   onAuthStateChanged,
-//   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -21,7 +20,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-// export const createUser= createUserWithEmailAndPassword();
 
 export const db = getFirestore(app);
 
@@ -46,3 +44,8 @@ export function useAuth() {
   return currentUser;
 }
 export const provider = new GoogleAuthProvider();
+
+
+
+
+
