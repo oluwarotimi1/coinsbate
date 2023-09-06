@@ -72,6 +72,7 @@ const SignUpForm = ({ setActiveTab }) => {
           phoneNumber: data.phoneNumber,
           uid: user.uid,
           verified: false,
+          role: "user",
         })
           .then(() => {
             setIsLoggedIn(true);

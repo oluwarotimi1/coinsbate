@@ -30,7 +30,7 @@ const Login = () => {
   };
   function wait(duration) {
     return new Promise((resolve) => setTimeout(resolve, duration));
-  }
+  };
   function success() {
     wait(1500).then(() => {
       navigate("/dashboard");
@@ -54,7 +54,7 @@ const Login = () => {
       .then((userCredentials) => {
         const user = userCredentials.user;
         localStorage.setItem("token", user.uid);
-        localStorage.setItem("isLoggedIn", true)
+        localStorage.setItem("isLoggedIn", true);
         logIn();
         setMessage("Success Login");
         setSeverity("success");

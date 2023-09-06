@@ -11,32 +11,19 @@ const UserProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     JSON.parse(localStorage.getItem("isLoggedIn"))
   );
-  const [isBaseUID, setIsBaseUID] = useState(
-    JSON.parse(localStorage.getItem("isBaseUID"))
-  );
   const VerifiedStatus = user?.verified;
   const [verifiedUser, setVerifiedUser] = useState(null);
 
   useEffect(() => {
     if (isLoggedIn) {
       handleGetUser(localStorage.getItem("token"));
-      if (localStorage.getItem("token") === "uB2dTZXEb1N4ksdAUWw3BxYjxt53") {
-        localStorage.setItem("adminBaseUID", "uB2dTZXEb1N4ksdAUWw3BxYjxt53");
-        navigate("/admin");
-      } else {
-        navigate("/dashboard");
-      }
       setLoadingUser(false);
     } else {
       setLoadingUser(false);
     }
   }, [isLoggedIn, navigate]);
 
-  useEffect(()=>{
-    if(isBaseUID){
-      console.log("Admin is logged in")
-    }
-  },[isBaseUID])
+  
 
   const handleGetUser = async (id) => {
     setLoadingUser(true);
@@ -64,15 +51,9 @@ const UserProvider = (props) => {
   }, [VerifiedStatus]);
   const logIn = () => {
     setIsLoggedIn(true);
-    if (localStorage.getItem("token") === "uB2dTZXEb1N4ksdAUWw3BxYjxt53") {
-      setIsBaseUID(true);
-    } else {
-      setIsBaseUID(false);
-    }
   };
   const logOut = useCallback(() => {
     localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("isBaseUID");
 
     localStorage.removeItem("token");
     setIsLoggedIn(false);
@@ -87,15 +68,13 @@ const UserProvider = (props) => {
     return () => {
       clearTimeout(logoutTimeOut);
     };
-  }, [logOut, isLoggedIn, isBaseUID]);
+  }, [logOut, isLoggedIn]);
 
   return (
     <UserContext.Provider
       value={{
         user,
         setUser,
-        isBaseUID,
-        setIsBaseUID,
         loadingUser,
         setLoadingUser,
         handleGetUser,

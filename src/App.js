@@ -11,11 +11,9 @@ import { useContext } from "react";
 import { UserContext } from "./components/context/UserContext";
 import ForgotPassword from "./pages/forgotpassword/ForgotPassword";
 import Profile from "./pages/profile/Profile";
-import AdminDashboard from "./pagesadmin/admindashboard/AdminDashboard";
 
 function App() {
   const { isLoggedIn } = useContext(UserContext);
-  const { isBaseUID } = useContext(UserContext);
 
   return (
     <>
@@ -25,7 +23,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         <Route
           path="/dashboard"
           element={
@@ -39,14 +36,6 @@ function App() {
           element={
             <PrivateRoute auth={isLoggedIn}>
               <Profile />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/admin"
-          element={
-            <PrivateRoute auth={isBaseUID}>
-              <AdminDashboard />
             </PrivateRoute>
           }
         />
