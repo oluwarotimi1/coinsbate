@@ -15,8 +15,7 @@ import { CircularProgress } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
 import { isDisabled } from "@testing-library/user-event/dist/utils";
 
-const Login = () => {
-  // const [value, setvalue] = useState("");
+const Login = () => {;
   const [loading, setIsLoading] = useState(false);
   const { logIn, loadingUser } = useContext(UserContext);
   const [showPassword, setShowPassword] = useState(false);

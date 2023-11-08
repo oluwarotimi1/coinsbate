@@ -11,3 +11,6 @@
         cursor: pointer;
         border-radius: 1.3rem;
 }
+.link_btn{
+    text-decoration: none;
+}

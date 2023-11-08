@@ -1,0 +1,45 @@
+.container{
+    margin: 5rem 2rem;
+}
+.main_dashboard{
+    display: grid;
+    grid-template-areas: 
+        "nav header header"
+        "nav content content"
+        "nav content content"
+    ;
+    min-height: 100vh;
+    width: 100%;
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: 250px 1fr;
+    
+}
+nav{
+    grid-area: nav;
+}
+header{
+    grid-area: header;
+    
+}
+main{
+    grid-area: content;
+}
+
+
+
+.main_dashboard_header{
+    padding: 2rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .main_dashboard{
+        display: flex;
+        flex-direction: column;
+        grid-template-areas: 
+            "nav nav nav"
+            "header header header"
+            "content content content"
+        ;
+        
+    }
+  }

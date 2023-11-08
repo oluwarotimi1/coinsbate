@@ -7,8 +7,10 @@ import { isDisabled } from "@testing-library/user-event/dist/utils";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const Buy = () => {
+  const navigate = useNavigate("")
   const [loading, setIsLoading] = useState(false);
   const [selectedCrypto, setSelectedCrypto] = useState("Btc");
   const [inputQuantity, setInputQuantity] = useState(0);
@@ -29,9 +31,17 @@ const Buy = () => {
     setInputWallet(event.target.value)
   }
   const schema = yup.object({
-    inputQuantity: yup.string().required("Fill up this field"),
+    // inputQuantity: yup.number().required("Fill up this field"),
     password: yup.string().required("Password feild is empty"),
   });
+  function wait(duration) {
+    return new Promise((resolve) => setTimeout(resolve, duration));
+  };
+  function payment() {
+    wait(1500).then(() => {
+      navigate("/payment");
+    });
+  }
   const {
     handleSubmit,
     formState: { errors },
@@ -39,7 +49,8 @@ const Buy = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit = (data) => {
+    payment()
     setIsLoading(true)
     console.log(data)
     setIsLoading(false)
@@ -161,6 +172,7 @@ const Buy = () => {
             style={{ width: "100%", marginTop: "2rem", padding: "14px" }}
             type="submit"
           />
+          
         )}
       </form>
     </div>
