@@ -44,9 +44,9 @@ const DashboardNav = ({ setActiveDashboard }) => {
       <div className={styles.dashboardnav_container}>
         <div className={styles.dashboard_navv}>
           <div>
-<h4> Welcome, {user?.displayName}</h4>
+            <h4> Welcome, {user?.displayName}</h4>
           </div>
-          
+
           <div className={styles.menuToggle} onClick={toggleMenu}>
             <div>
               {" "}
@@ -56,7 +56,7 @@ const DashboardNav = ({ setActiveDashboard }) => {
           </div>
         </div>
 
-        <div>
+        <div className={styles.dashboard_nav}>
           <ul className={isMenuOpen ? styles.showMenu : ""}>
             <li onClick={handleDash}>
               <Link> Dashboard</Link>

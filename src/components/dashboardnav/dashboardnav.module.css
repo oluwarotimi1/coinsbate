@@ -79,11 +79,30 @@
     margin-bottom: 20px; /* Adjust spacing for smaller screens */
   }
 
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 10px; /* Adjust spacing for smaller screens */
+  }
+
+  /* Optional: Add additional styles for smaller screens as needed */
+
   .menuToggle {
     display: block; /* Show the hamburger menu on smaller screens */
     transition: transform 0.3s ease;
   }
+ 
 
+  .dashboard_nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: none; /* Hide the menu by default on smaller screens */
+  }
+
+ 
   ul.showMenu {
     display: flex;
     flex-direction: column;
