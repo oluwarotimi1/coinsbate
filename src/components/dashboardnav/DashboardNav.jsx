@@ -1,37 +1,63 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./dashboardnav.module.css";
 import { UserContext } from "../context/UserContext";
 import { Link } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-const DashboardNav = ({setActiveDashboard}) => {
+const DashboardNav = ({ setActiveDashboard }) => {
   const { user } = useContext(UserContext);
-  const handleDash =()=>{
-    setActiveDashboard("dash")
-  }
-  const handleFund =()=>{
-    setActiveDashboard("fund")
-  }
-  const handleWithdraw =()=>{
-    setActiveDashboard("withdraw")
-  }
-  const handleTransaction =()=>{
-    setActiveDashboard("transaction")
-  }
-  const handleInvest =()=>{
-    setActiveDashboard("invest")
-  }
-  const handleRefer =()=>{
-    setActiveDashboard("refer")
-  }
-  const handleHelp =()=>{
-    setActiveDashboard("help")
-  }
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleDash = () => {
+    setActiveDashboard("dash");
+    setIsMenuOpen(!isMenuOpen);
+  };
+  const handleFund = () => {
+    setActiveDashboard("fund");
+    setIsMenuOpen(!isMenuOpen);
+  };
+  const handleWithdraw = () => {
+    setActiveDashboard("withdraw");
+    setIsMenuOpen(!isMenuOpen);
+  };
+  const handleTransaction = () => {
+    setActiveDashboard("transaction");
+    setIsMenuOpen(!isMenuOpen);
+  };
+  const handleInvest = () => {
+    setActiveDashboard("invest");
+    setIsMenuOpen(!isMenuOpen);
+  };
+  const handleRefer = () => {
+    setActiveDashboard("refer");
+    setIsMenuOpen(!isMenuOpen);
+  };
+  const handleHelp = () => {
+    setActiveDashboard("help");
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <section className={styles.main_dashboard_nav}>
       <div className={styles.dashboardnav_container}>
-        <h4> Welcome, {user?.displayName}</h4>
+        <div className={styles.dashboard_navv}>
+          <div>
+<h4> Welcome, {user?.displayName}</h4>
+          </div>
+          
+          <div className={styles.menuToggle} onClick={toggleMenu}>
+            <div>
+              {" "}
+              <span>MENU</span>
+              <GiHamburgerMenu size={20} />{" "}
+            </div>
+          </div>
+        </div>
+
         <div>
-          <ul>
+          <ul className={isMenuOpen ? styles.showMenu : ""}>
             <li onClick={handleDash}>
               <Link> Dashboard</Link>
             </li>
