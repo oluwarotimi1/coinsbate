@@ -69,7 +69,8 @@
   }
   .dashboard_navv{
     display: flex;
-    gap: 10rem;
+    justify-content: space-between;
+    gap: 3rem;
     align-items: center;
   }
   .main_dashboard_nav h4 {
