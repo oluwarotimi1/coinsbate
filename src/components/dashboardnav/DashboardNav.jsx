@@ -44,7 +44,7 @@ const DashboardNav = ({ setActiveDashboard }) => {
       <div className={styles.dashboardnav_container}>
         <div className={styles.dashboard_navv}>
           <div>
-            <h4> Welcome, STupid {user?.displayName}</h4>
+            <h4> Welcome, {user?.displayName}</h4>
           </div>
 
           <div className={styles.menuToggle} onClick={toggleMenu}>
