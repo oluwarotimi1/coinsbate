@@ -78,7 +78,7 @@ const Dashboard = () => {
               >
                 ETH:
                 {postsQuery.data && (
-                  <span style={{ color: "green" }}>
+                  <span style={{ color: "red" }}>
                     {" "}
                     ${postsQuery.data.USD.last}
                   </span>
