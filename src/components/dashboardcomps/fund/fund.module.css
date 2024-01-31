@@ -1,0 +1,18 @@
+.fund_container{
+    background: #fff;
+    min-height: 50vh;
+}
+.funds_balance{
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.funds_transfer_section{
+    border-radius: 10px;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}

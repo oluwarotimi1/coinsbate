@@ -18,11 +18,10 @@ const BuySection = () => {
             </h4>
           </Col>
           <Col sx={6} className={styles.buysection_coltwo}>
-            {/* <button >Buy Crypto</button> */}
             <App  title="Buy Crypto"/>
           </Col>
         </Row>
-      </Container>
+      </Container> 
       
     </div>
   );

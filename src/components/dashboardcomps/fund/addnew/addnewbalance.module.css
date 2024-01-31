@@ -1,0 +1,55 @@
+.mybtn_styles{
+    color: #fff;
+        background: #000;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+        border:0.2px solid #fff;
+        padding: 0.5em 2rem;
+        cursor: pointer;
+        border-radius: 1.3rem;
+}
+.link_btn{
+    text-decoration: none;
+}
+
+.typeofcurrency{
+
+}
+.currency_label{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 1.3rem 1rem;
+    gap: 1rem;
+    border: 1px solid grey;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+.currency_label input{
+    cursor: pointer;
+    
+}
+.typeofcurrency input[type='radio']:after {
+    background-color: #d1d3d1;
+    color: red;
+}
+.typeofcurrency input[type='radio']:checked:after{
+    background-color: black;
+    color: red;
+}
+.AddNewBalance_proceed{
+    color: #fff;
+        background: #000;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+        border:0.2px solid #fff;
+        padding: 0.5em 2rem;
+        cursor: pointer;
+        border-radius: 1.3rem;
+}
