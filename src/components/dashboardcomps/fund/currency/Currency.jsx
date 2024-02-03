@@ -4,6 +4,9 @@ import { TbCurrencyNaira } from "react-icons/tb";
 import { FaDollarSign } from "react-icons/fa";
 import styles from "./currency.module.css";
 import { Col, Row } from "react-bootstrap";
+import { MdArrowOutward } from "react-icons/md";
+import { RiArrowLeftRightFill } from "react-icons/ri";
+
 
 const Currency = () => {
   const Naira = () => {
@@ -31,10 +34,12 @@ const Currency = () => {
     );
   };
   return (
+    <>
+   
     <Tabs
       defaultActiveKey="naira"
       id="justify-tab-example"
-      className="mb-3"
+      className="mb-3 pt-3"
       justify
     >
       <Tab eventKey="naira" title={Naira()}>
@@ -70,7 +75,7 @@ const Currency = () => {
         </div>
       </Tab>
       <Tab eventKey="dollar" title={Dollar()}>
-      <div>
+        <div>
           <Row>
             <Col className={styles.naira_available_table}>
               <div>
@@ -88,13 +93,13 @@ const Currency = () => {
             <Col className={styles.naira_pending_table}>
               <div>
                 <span className={styles.pending_balance_naira}>
-                  Pending  balance
+                  Pending balance
                 </span>
               </div>
               <div>
                 <h4 className={styles.currency_naira}>
                   <FaDollarSign />
-                5.00
+                  5.00
                 </h4>
               </div>
             </Col>
@@ -102,7 +107,7 @@ const Currency = () => {
         </div>
       </Tab>
       <Tab eventKey="usdt" title={Usdt()}>
-      <div>
+        <div>
           <Row>
             <Col className={styles.naira_available_table}>
               <div>
@@ -134,6 +139,17 @@ const Currency = () => {
         </div>
       </Tab>
     </Tabs>
+    <div>
+        <div>
+            <Row className={styles.convert_withdraw}>
+                <Col>
+                <btn className={styles.btn_convert}>Convert <RiArrowLeftRightFill size="16"/> </btn>
+                </Col>
+                <Col><btn className={styles.btn_convert}>Withdraw <MdArrowOutward size="16"/> </btn></Col>
+            </Row>
+        </div>
+    </div>
+    </>
   );
 };
 
