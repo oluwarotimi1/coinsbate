@@ -1,0 +1,37 @@
+.currency_label{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+}
+.available_balance{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    gap: 2rem;
+}
+.currency_naira{
+    display: flex;
+    align-items: center;
+}
+.naira_available_table{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* .pending_balance_naira{
+    border-left: 0.1px solid rgb(173, 173, 173);
+} */
+
+.naira_pending_table{
+    border-left: 0.1px solid rgb(173, 173, 173);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

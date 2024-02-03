@@ -3,6 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import styles from "./addnewbalance.module.css";
 import { TbCurrencyNaira } from "react-icons/tb";
 import { FaDollarSign } from "react-icons/fa";
+import { CiDollar } from "react-icons/ci";
 
 function AddNewBalance(props) {
   const [show, setShow] = useState(false);
@@ -34,6 +35,11 @@ function AddNewBalance(props) {
                 <input type="radio" name="currency" value="Dollar" />
                 <FaDollarSign  color="orange" size="22"/>
                 <span>US Dollar</span>
+            </label>
+            <label className={styles.currency_label}>
+                <input type="radio" name="currency" value="usdt" />
+                <CiDollar  color="gray" size="22"/>
+                <span>USDT(crypto)</span>
             </label>
           </div>
         </Modal.Body>

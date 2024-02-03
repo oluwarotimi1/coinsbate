@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import styles from "./fund.module.css";
 import { AddNewBalanceButton } from "./addnew/AddNewBalance";
+import Currency from "./currency/Currency";
 
 const Fund = () => {
   return (
@@ -13,9 +14,7 @@ const Fund = () => {
         </div>
 
         <div className={styles.funds_transfer_section}>
-          <div>Currencies</div>
-          <div>Currencies</div>
-          <div>Currencies</div>
+          <Currency />
         </div>
       </Container>
     </section>
