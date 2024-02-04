@@ -1,0 +1,37 @@
+.withdrawSection_container{
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    margin: 0rem 2rem ;
+    border-radius: 10px;
+}
+.withdrawSection {
+    padding: 1rem;
+    margin: 1rem;
+}
+.withdrawSection a{
+    text-decoration: none;
+    color: #000;
+  
+}
+.withdraw_col_one{
+    border: 0.1px solid rgb(173, 173, 173);
+    border-radius: 8px;
+    margin: 0.6rem 0;
+    padding: 1rem;
+}
+.withdraw_col_one :hover{
+    /* border: 0.1px solid #000; */
+}
+.withdraw_link{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+}
+.withdraw_link h5{
+    font-size: 16px;
+    font-weight: bold;
+}

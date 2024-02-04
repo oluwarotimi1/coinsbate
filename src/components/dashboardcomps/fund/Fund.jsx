@@ -5,7 +5,7 @@ import { AddNewBalanceButton } from "./addnew/AddNewBalance";
 import Currency from "./currency/Currency";
 import Orders from "../../dashboardpage/orders/Orders";
 
-const Fund = () => {
+const Fund = ({activeDashboard, setActiveDashboard}) => {
   return (
     <section className={styles.fund_section}>
       <Container className={styles.fund_container}>
@@ -15,7 +15,7 @@ const Fund = () => {
         </div>
 
         <div className={styles.funds_transfer_section}>
-          <Currency />
+          <Currency activeDashboard={activeDashboard} setActiveDashboard={setActiveDashboard}/>
         </div>
         <div className={styles.funds_transfer_section}>
           <Orders />

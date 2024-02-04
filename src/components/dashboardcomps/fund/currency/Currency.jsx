@@ -8,7 +8,11 @@ import { MdArrowOutward } from "react-icons/md";
 import { RiArrowLeftRightFill } from "react-icons/ri";
 
 
-const Currency = () => {
+const Currency = ({setActiveDashboard}) => {
+
+  const handleWithdrawFunds =()=>{
+    setActiveDashboard("withdraw");
+  }
   const Naira = () => {
     return (
       <span className={styles.currency_label}>
@@ -143,9 +147,9 @@ const Currency = () => {
         <div>
             <Row className={styles.convert_withdraw}>
                 <Col>
-                <btn className={styles.btn_convert}>Convert <RiArrowLeftRightFill size="16"/> </btn>
+                <btn className={styles.btn_convert} >Convert <RiArrowLeftRightFill size="16"/> </btn>
                 </Col>
-                <Col><btn className={styles.btn_convert}>Withdraw <MdArrowOutward size="16"/> </btn></Col>
+                <Col><btn className={styles.btn_convert} onClick={handleWithdrawFunds}>Withdraw <MdArrowOutward size="16"/> </btn></Col>
             </Row>
         </div>
     </div>

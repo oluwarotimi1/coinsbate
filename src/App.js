@@ -5,7 +5,7 @@ import Footer from "./components/footer/Footer";
 import Homepage from "./pages/homepage/Homepage";
 import Login from "./pages/login/Login";
 import SignUp from "./pages/signup/SignUp";
-import Dashboard from "./pages/dashboard/Dashboard";
+// import Dashboard from "./pages/dashboard/Dashboard";
 import PrivateRoute from "./components/privateroute/PrivateRoute";
 import { useContext } from "react";
 import { UserContext } from "./components/context/UserContext";
@@ -25,14 +25,14 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route
+        {/* <Route
           path="/my-dashboard"
           element={
             <PrivateRoute auth={isLoggedIn}>
               <Dashboard />
             </PrivateRoute>
           }
-        />
+        /> */}
         <Route
           path="/dashboard"
           element={
