@@ -1,0 +1,10 @@
+.inputmoney_container{
+    display: flex;
+  background: var(--color-white);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 380px;
+  height: 450px;
+  padding: 1.7rem;
+}

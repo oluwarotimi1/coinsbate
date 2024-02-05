@@ -1,0 +1,9 @@
+.container{
+    margin: 5rem 2rem;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background: var(--color-bg); */
+}

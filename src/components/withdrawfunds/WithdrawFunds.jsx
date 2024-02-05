@@ -14,7 +14,7 @@ const WithdrawFunds = () => {
         </div>
         <div>
           <div className={styles.withdraw_col_one}>
-            <Link className={styles.withdraw_link}>
+            <Link className={styles.withdraw_link} to="/sendmoneybank">
               <span>
                 <BsBank />
               </span>

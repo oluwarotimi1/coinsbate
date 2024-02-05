@@ -13,6 +13,7 @@ import ForgotPassword from "./pages/forgotpassword/ForgotPassword";
 import Profile from "./pages/profile/Profile";
 import Payment from "./pages/payment/Payment";
 import MainDashboard from "./pages/maindashboard/MainDashboard";
+import SendMoneyBank from "./pages/SendMoney/SendMoneyBank";
 
 function App() {
   const { isLoggedIn } = useContext(UserContext);
@@ -54,6 +55,14 @@ function App() {
           element={
             <PrivateRoute auth={isLoggedIn}>
               <Payment />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/sendmoneybank"
+          element={
+            <PrivateRoute auth={isLoggedIn}>
+              <SendMoneyBank />
             </PrivateRoute>
           }
         />
