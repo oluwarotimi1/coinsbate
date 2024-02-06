@@ -3,7 +3,7 @@ import styles from './sendmoneybank.module.css'
 import SendMoneyTab from './sendmoneytabs/SendMoneyTab'
 
 const SendMoneyBank = () => {
-    const [activeTabSend, setActiveTabSend] = useState("inputMoney");
+    const [activeTabSend, setActiveTabSend] = useState("");
     useEffect(() => {
         // Scroll to the top of the page when the component mounts
         window.scrollTo(0, 0);

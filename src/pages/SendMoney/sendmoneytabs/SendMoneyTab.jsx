@@ -7,7 +7,7 @@ import ReviewRecipient from '../reviewrecipient/ReviewRecipient';
 const SendMoneyTab = ({activeTabSend, setActiveTabSend}) => {
     switch (activeTabSend) {
         case "input":
-          return <InputMoney activeTabSend={activeTabSend} setActiveTabSend={setActiveTabSend} />;
+          return <InputMoney activeTabSend={activeTabSend}  setActiveTabSend={setActiveTabSend} />;
         case "recipient":
           return <Recipient activeTabSend={activeTabSend} setActiveTabSend={setActiveTabSend} />;
         case "recipientdetails":
@@ -16,7 +16,7 @@ const SendMoneyTab = ({activeTabSend, setActiveTabSend}) => {
             return <ReviewRecipient activeTabSend={activeTabSend} setActiveTabSend={setActiveTabSend} />;
     
         default:
-          return <InputMoney />;
+          return <InputMoney setActiveTabSend={setActiveTabSend} />;
       }
 }
 
