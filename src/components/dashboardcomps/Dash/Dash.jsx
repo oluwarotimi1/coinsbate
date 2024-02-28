@@ -3,7 +3,7 @@ import BuySection from '../../../components/dashboardpage/buysection/BuySection'
 import Orders from '../../../components/dashboardpage/orders/Orders'
 import PortfoilioSection from '../../../components/dashboardpage/portfoiliosection/PortfoilioSection'
 
-const Dash = () => {
+const Dash = ({activeDashboard, setActiveDashboard}) => {
   return (
     <div>
       <div>

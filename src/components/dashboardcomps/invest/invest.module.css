@@ -1,0 +1,28 @@
+.invest_section {
+  background: url("../../../assets/piles-coins-with-plant-front-graph.jpg");
+  margin-left: 0.5rem; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  background-size: 100% 100%; /* Cover the entire screen without cropping */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the background image */
+  min-height: 50vh; /* Set the height of the body to 100% of the viewport height */
+  overflow: hidden;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.start_invest {
+}
+.AddNewBalance_proceed {
+  color: #fff;
+  background: #000;
+  width: 200px;
+  outline: none;
+  border: 0.2px solid #fff;
+  padding: 0.5em 2rem;
+  cursor: pointer;
+  border-radius: 1.3rem;
+}

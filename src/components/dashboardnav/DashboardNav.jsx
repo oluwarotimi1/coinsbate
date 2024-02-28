@@ -58,6 +58,9 @@ const DashboardNav = ({ setActiveDashboard }) => {
 
         <div className={styles.dashboard_nav}>
           <ul className={isMenuOpen ? styles.showMenu : ""}>
+          <li onClick={handleInvest}>
+              <Link> Invest</Link>
+            </li>
             <li onClick={handleDash}>
               <Link> Dashboard</Link>
             </li>
@@ -70,9 +73,7 @@ const DashboardNav = ({ setActiveDashboard }) => {
             <li onClick={handleTransaction}>
               <Link> Transaction History </Link>
             </li>
-            <li onClick={handleInvest}>
-              <Link> Invest</Link>
-            </li>
+            
             <li onClick={handleRefer}>
               <Link> Refer Users </Link>
             </li>

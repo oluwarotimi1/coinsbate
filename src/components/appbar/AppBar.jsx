@@ -73,7 +73,7 @@ function MyAppBar() {
               textDecoration: "none",
             }}
           >
-            <Link to="/">RegXchange</Link>
+            <Link to="/">Coinsbate</Link>
           </Typography>
           {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
@@ -92,7 +92,7 @@ function MyAppBar() {
               textDecoration: "none",
             }}
           >
-            <Link to="/">RegXchange</Link>
+            <Link to="/">CoinsBate</Link>
           </Typography>
           </span>
          

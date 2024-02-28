@@ -1,0 +1,35 @@
+.plan_invest_container {
+}
+.plan_invest_container h4 {
+  text-align: center;
+  margin: 1rem 0rem;
+}
+.invest_card {
+  display: flex;
+  justify-content: space-around;
+  min-width: 220px;
+  min-height: 400px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #cca354 !important;
+  text-align: center;
+  transition: 1s all;
+}
+.invest_card:hover{
+    scale: 1.04;
+}
+.invest_card_div p {
+  border-bottom: 0.5px solid #cca354;
+}
+.invest_btn{
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 0.5rem 0rem;
+    background-color: #cca354;
+}
+.invest_btn:hover{
+    color: #cca354;
+    background-color: #fff;
+    border: 0.5px solid #000;
+}

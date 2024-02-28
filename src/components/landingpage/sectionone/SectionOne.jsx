@@ -101,7 +101,7 @@ const SectionOne = () => {
                   <MyBtn
                     style={BuyButtonStyle}
                     handleCLick={handleTradeNow}
-                    children="Trade Now"
+                    children="Invest Now"
                   />
                 </div>
                 <div className={styles.btn_two}>
@@ -116,7 +116,7 @@ const SectionOne = () => {
                       // Reset the background color when the hover is no longer active
                       BuyButtonStyleTwo.background = "red";
                     }}
-                    children="Trade Now"
+                    children="Invest Now"
                   />
                 </div>
               </div>
