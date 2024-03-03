@@ -1,0 +1,13 @@
+.dashboardfunds_card{
+    min-width: 12rem;
+    min-height: 120px;
+    background: var(--color-background);
+    color: var(--color-white);
+    margin: 0.5rem 1rem ;
+}
+.dashboardfunds_card_wallet_balance{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.5rem;
+}

@@ -28,7 +28,7 @@ const MainDashboard = () => {
         <header className={styles.main_dashboard_header}>
           <Marquee>
             <span style={{ padding: "0rem 1rem " }}>
-              NOTE: Price can be affected by market volatility and can change. Site still in <span style={{ color: "red"}}>BETA MODE</span> 
+              NOTE: Price can be affected by market volatility and can change. Updates still incoming! <span style={{ color: "red"}}></span> 
             </span>
             <span>
             BTC:{" "}
@@ -36,16 +36,6 @@ const MainDashboard = () => {
               <span style={{ color: "green", padding: "0rem 2rem 0rem 0rem" }}>
                 {" "}
                 ${postsQuery.data.USD.last}
-              </span>
-            )}
-            </span>
-            
-            <span>
-            ETH:{" "}
-            {postsQuery.data && (
-              <span style={{ color: "green", padding: "0rem 2rem 0rem 0rem" }}>
-                {" "}
-                $1890.89
               </span>
             )}
             </span>
