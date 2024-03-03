@@ -15,7 +15,7 @@ const SectionFive = () => {
               with your portfolio while youre out and about.
             </p>
             <div className={`${styles.sectionfive_btn_div} `}> 
-                <button>Get on Google play Store</button>
+                <button disabled>Get on Google play Store=== Coming soon</button>
             </div>
           </Col>
           <Col className={styles.sectionfive_coltwo}>

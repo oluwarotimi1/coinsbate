@@ -13,14 +13,14 @@ const SectionTwo = () => {
         <Row >
           <Col className={`${styles.SectionTwo_colone} container`}>
             <p>Product</p>
-            <h3>Your portfolio at your fingertips</h3>
+            <h3 style={{textAlign:'center'}}>Crypto investment at your fingertips</h3>
             <h5>
-              Get verified, get funded, buy and sell and also track your assets across all of your
+             Create account, get funded, track your assets across all of your
               screens. Whether this is your first or five millionth investment,
               we've got tools built just for you.
             </h5 >
               <BasicCard  parent="New Investors" children="We make it easy to learn about and buy your first crypto assets."/>
-              <BasicCard parent="Pro Traders" children="You'll get all of the tools you need for more frequent and complex trades."/>
+              <BasicCard parent="Pro Traders" children="You'll get all of the tools you need for more frequent and complex trades and investments."/>
             
           </Col>
           <Col className={styles.SectionTwo_coltwo}></Col>
