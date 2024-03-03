@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./dashbaordfunds.module.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Card } from "react-bootstrap";
 import { CgDollar } from "react-icons/cg";
+import { UserContext } from "../../context/UserContext";
+
 
 const Dashboardfunds = () => {
+  const { user } = useContext(UserContext);
   return (
     <div className={`${styles.dashboardfunds_container} container mt-3`}>
       <Container>
@@ -16,7 +19,7 @@ const Dashboardfunds = () => {
               <div className={styles.dashboardfunds_card_wallet_balance}>
                 <div >
                   <p>Deposit Wallet Balance</p>
-                  <h6 className="">$0</h6>
+                  <h6 className="">${user?.depositBalance}</h6>
                 </div>
                 <div>
                   <CgDollar size={26} />
@@ -29,7 +32,7 @@ const Dashboardfunds = () => {
               <div className={styles.dashboardfunds_card_wallet_balance}>
                 <div >
                   <p>Interest Wallet Balance</p>
-                  <h6 className="">$0</h6>
+                  <h6 className="">${user?.interestBalance}</h6>
                 </div>
                 <div>
                   <CgDollar size={26} />
@@ -44,7 +47,7 @@ const Dashboardfunds = () => {
               <div className={styles.dashboardfunds_card_wallet_balance}>
                 <div >
                   <p>Total Invest</p>
-                  <h6 className="">$0</h6>
+                  <h6 className="">${user?.totalInvest}</h6>
                 </div>
                 <div>
                   <CgDollar size={26} />
@@ -59,7 +62,7 @@ const Dashboardfunds = () => {
               <div className={styles.dashboardfunds_card_wallet_balance}>
                 <div >
                   <p>Total Deposit</p>
-                  <h6 className="">$0</h6>
+                  <h6 className="">${user?.totalDeposit}</h6>
                 </div>
                 <div>
                   <CgDollar size={26} />
@@ -73,7 +76,7 @@ const Dashboardfunds = () => {
               <div className={styles.dashboardfunds_card_wallet_balance}>
                 <div >
                   <p>Total Withdraw</p>
-                  <h6 className="">$0</h6>
+                  <h6 className="">${user?.totalWithdraw}</h6>
                 </div>
                 <div>
                   <CgDollar size={26} />

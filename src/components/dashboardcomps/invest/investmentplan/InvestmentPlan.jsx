@@ -4,14 +4,14 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 
 const InvestmentPlan = () => {
   return (
-    <section className={styles.plan_invest}>
-      <Container className={styles.plan_invest_container}>
+    <section className={styles.plan_invest} id="invest">
+      <Container className={styles.plan_invest_container} >
         <h4>Investment Plans</h4>
         <div>
           <Row>
             <Col>
               <Card className={styles.invest_card}>
-                <h3>AMATEUR PLAN</h3>
+                <h3 >AMATEUR PLAN</h3>
                 <div className={styles.invest_card_div}>
                   <p>Return 1.4%</p>
                   <p>Every day</p>

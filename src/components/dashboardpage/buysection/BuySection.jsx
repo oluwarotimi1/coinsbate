@@ -14,11 +14,13 @@ const BuySection = () => {
           <Col sx={6} className={styles.buysection_colone}>
             <h4 style={{ fontWeight: 200 }}>
               <PiCurrencyBtcFill size={25} style={{ marginRight: "10px" }} />
-              Ready to buy your first crypto?
+              Ready to invest?
             </h4>
           </Col>
           <Col sx={6} className={styles.buysection_coltwo}>
-            <App  title="Buy Crypto"/>
+            {/* <App  title="Buy Crypto"/> */}
+
+            <a href="#invest">Invest</a>
           </Col>
         </Row>
       </Container> 
