@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./buysection.module.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { PiCurrencyBtcFill } from "react-icons/pi";
-import { App } from "../buymodal/MyVerticallyCenteredModal";
 
 const BuySection = () => {
   return (
