@@ -69,7 +69,7 @@ const SectionOne = () => {
                     animate={{ x: 0 }}
                     transition={{ delay: 1.3, duration: 3 }}
                   >
-                    A better way to bitcoin
+                    Start your crypto investment today.
                   </motion.div>
                 </h1>
 
@@ -79,8 +79,8 @@ const SectionOne = () => {
                   transition={{ delay: 1.3, duration: 3 }}
                 >
                   <p>
-                    Join the fastest growing global cryptocurrency exchange —
-                    with the lowest fees around.
+                    Join the fastest growing global cryptocurrency investment company —
+                   
                   </p>
                 </motion.div>
 

@@ -8,6 +8,7 @@ import SectionThree from "../../components/landingpage/sectionThree/SectionThree
 import SectionFour from "../../components/landingpage/secitionfour/SectionFour";
 import SectionFive from "../../components/landingpage/sectionfive/SectionFive";
 import SectionSix from "../../components/landingpage/sectionsix/SectionSix";
+import InvestmentPlan from "../../components/dashboardcomps/invest/investmentplan/InvestmentPlan";
 
 const Homepage = () => {
   // const primaryButtonStyle ={
@@ -17,6 +18,7 @@ const Homepage = () => {
     <div className={styles.homepage_container}>
       <div className={`${styles.homepage_section}`}>
         <SectionOne />
+        <InvestmentPlan />
         <SectionThree />
         <SectionTwo />
         <SectionFour />
