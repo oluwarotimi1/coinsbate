@@ -8,9 +8,9 @@ const Invest = () => {
         <Container>
           <div className={styles.start_invest}>
             <h3 className="pb-4"> START YOUR CRYPTO INVESTMENT TODAY</h3>
-            <h5>GROW YOUR CAPITAL WITH COINPRIXM INVESTMENT COMPANY</h5>
+            <h5>GROW YOUR CAPITAL WITH COINSBATE INVESTMENT COMPANY</h5>
             <h6>
-              Coinprixm Investment Company is the brand new online earning
+              Coinsbate Investment Company is the brand new online earning
               platform made for everyone, so even unexperienced investors are
               successfully making a profit. Our program, unlike any other,
               guarantees fix interest for investors regardless of market
