@@ -1,0 +1,10 @@
+.PaymentByBtc_section{
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.PaymentByBtc_container{
+    
+}

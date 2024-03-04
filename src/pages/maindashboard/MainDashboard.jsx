@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getBtc } from "../../components/api/getApi";
 import TabsDashboard from "./tabsdashboard/TabsDashboard";
 import InvestmentPlan from "../../components/dashboardcomps/invest/investmentplan/InvestmentPlan";
+import PortfoilioSection from "../../components/dashboardpage/portfoiliosection/PortfoilioSection"
 
 const MainDashboard = () => {
   const [activeDashboard, setActiveDashboard] = useState("dash");
@@ -57,6 +58,7 @@ const MainDashboard = () => {
         </main>
       </section>
       <InvestmentPlan />
+      <PortfoilioSection/>
     </div>
   );
 };

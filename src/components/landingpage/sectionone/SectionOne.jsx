@@ -69,7 +69,7 @@ const SectionOne = () => {
                     animate={{ x: 0 }}
                     transition={{ delay: 1.3, duration: 3 }}
                   >
-                    Start your crypto investment today.
+                    Crypto Investing Made Easy With Coinsbate
                   </motion.div>
                 </h1>
 
@@ -79,8 +79,9 @@ const SectionOne = () => {
                   transition={{ delay: 1.3, duration: 3 }}
                 >
                   <p>
-                    Join the fastest growing global cryptocurrency investment company —
-                   
+                    Poor people just hard work and spend their money, while rich
+                    people save their money and invest, so they never work
+                    again.
                   </p>
                 </motion.div>
 

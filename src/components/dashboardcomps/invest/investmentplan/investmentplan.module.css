@@ -5,6 +5,7 @@
   margin: 1rem 0rem;
 }
 .invest_card {
+  color: #fff;
   display: flex;
   justify-content: space-around;
   min-width: 220px;
@@ -14,6 +15,9 @@
   border: 1px solid #cca354 !important;
   text-align: center;
   transition: 1s all;
+  background-image: url("../../../../assets/invest-bg.png") ;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .invest_card:hover{
     scale: 1.04;

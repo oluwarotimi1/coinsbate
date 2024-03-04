@@ -38,3 +38,6 @@
     margin: 0.5rem;
 
 }
+.btc_form button:hover{
+  cursor: pointer;
+}

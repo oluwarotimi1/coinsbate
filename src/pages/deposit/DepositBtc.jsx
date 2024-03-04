@@ -11,6 +11,9 @@ const DepositBtc = () => {
     const handleBack = () => {
         navigate("/dashboard")
       };
+      const hanldleBtc =()=>{
+        navigate("/deposit-btc")
+      }
   return (
     <section className={styles.DepositBtc_section}>
       <Container className={styles.DepositBtc_container}>
@@ -26,7 +29,7 @@ const DepositBtc = () => {
                 <p>Bitcoin</p>
                 <p>Limit : 50- 100,000,000 USD </p>
                 <p>Charge - 0 USD + 0%</p>
-                <button>Deposit</button>
+                <button onClick={hanldleBtc}>Deposit</button>
               </form>
             </div>
           </Col>
