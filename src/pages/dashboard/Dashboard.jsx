@@ -3,7 +3,7 @@ import styles from "./dashboard.module.css";
 import BuySection from "../../components/dashboardpage/buysection/BuySection";
 import PortfoilioSection from "../../components/dashboardpage/portfoiliosection/PortfoilioSection";
 import { useQuery } from "@tanstack/react-query";
-import Orders from "../../components/dashboardpage/orders/Orders";
+// import Orders from "../../components/dashboardpage/orders/Orders";
 import Marquee from "react-fast-marquee";
 import { getBtc } from "../../components/api/getApi";
 import { Col, Container, Row } from "react-bootstrap";
@@ -123,7 +123,7 @@ const Dashboard = () => {
       </Marquee>
       <div className={`${styles.dashboard_section}container`}>
         <BuySection />
-        <Orders />
+        {/* <Orders /> */}
         <PortfoilioSection />
       </div>
     </div>

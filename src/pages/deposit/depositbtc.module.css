@@ -1,0 +1,40 @@
+.DepositBtc_section{
+    min-height: 80vh;
+    margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-bg);
+}
+.create_back{
+    cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+.btc_card{
+    display: flex;
+    background: var(--color-white);
+    justify-content: center;
+    align-items: center;
+    min-width: 220px;
+    min-height: 300px;
+    border: 0.2px solid #cca354 !important;
+}
+.btc_form{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btc_form button {
+    width: 200px;
+    outline: none;
+    background:#cca354;
+    border: none;
+    border-radius: 0.4rem;
+    margin: 0.5rem;
+
+}

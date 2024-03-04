@@ -116,7 +116,7 @@ nav li a:hover::after {
     justify-content: space-around;
     align-items: flex-start;
     flex-direction: column;
-    width: 500px;
+    min-width: 200px;
     height: 65vh;
   }
 

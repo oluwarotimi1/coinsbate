@@ -19,7 +19,7 @@ const BuySection = () => {
           <Col sx={6} className={styles.buysection_coltwo}>
             {/* <App  title="Buy Crypto"/> */}
 
-            <a href="#invest">Invest</a>
+            <a href="#invest" className={styles.invest_btn}>Invest Here</a>
           </Col>
         </Row>
       </Container> 

@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import styles from "./addnewbalance.module.css";
-import { TbCurrencyNaira } from "react-icons/tb";
-import { FaDollarSign } from "react-icons/fa";
+import { PiCurrencyBtc } from "react-icons/pi";
 import { CiDollar } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 
 function AddNewBalance(props) {
   const [show, setShow] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleProceedAdd =()=>{
+    navigate("/deposit");
+  }
 
   return (
     <>
@@ -27,19 +33,14 @@ function AddNewBalance(props) {
           <p>Select your choice of currency to add </p>
           <div className={styles.typeofcurrency}>
             <label className={styles.currency_label}>
-                <input type="radio" name="currency" value="Naira" />
-                <TbCurrencyNaira color="green" size="22"/>
-                <span>Nigerian Naira</span>
-            </label>
-            <label className={styles.currency_label}>
                 <input type="radio" name="currency" value="Dollar" />
-                <FaDollarSign  color="orange" size="22"/>
-                <span>US Dollar</span>
+                <PiCurrencyBtc  color="orange" size="22"/>
+                <span>BTC</span>
             </label>
             <label className={styles.currency_label}>
                 <input type="radio" name="currency" value="usdt" />
                 <CiDollar  color="gray" size="22"/>
-                <span>USDT(crypto)</span>
+                <span>USDT</span>
             </label>
           </div>
         </Modal.Body>
@@ -49,6 +50,7 @@ function AddNewBalance(props) {
               //   onClick={handleProceedClick}
               style={{ width: "100%", padding: "14px" }}
               className={styles.AddNewBalance_proceed}
+              onClick={handleProceedAdd}
             >
               Proceed
             </button>

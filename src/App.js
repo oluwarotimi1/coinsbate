@@ -14,6 +14,7 @@ import Profile from "./pages/profile/Profile";
 import Payment from "./pages/payment/Payment";
 import MainDashboard from "./pages/maindashboard/MainDashboard";
 import SendMoneyBank from "./pages/SendMoney/SendMoneyBank";
+import DepositBtc from "./pages/deposit/DepositBtc";
 
 function App() {
   const { isLoggedIn } = useContext(UserContext);
@@ -63,6 +64,14 @@ function App() {
           element={
             <PrivateRoute auth={isLoggedIn}>
               <SendMoneyBank />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/deposit"
+          element={
+            <PrivateRoute auth={isLoggedIn}>
+              <DepositBtc />
             </PrivateRoute>
           }
         />
