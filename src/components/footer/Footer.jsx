@@ -1,5 +1,5 @@
 import React from "react";
-import './footer.css'
+import "./footer.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -7,14 +7,16 @@ const Footer = () => {
     <div>
       <footer class="footer">
         <div class="footer__addr">
-          <h1 class="footer__logo">&copy; RegXchange</h1>
+          <h1 class="footer__logo">&copy; coinsbate</h1>
 
           <h2>Contact</h2>
 
           <address>
-            5534 Somewhere In. The World 22193-10212
-            <br />
-            <Link class="footer__btn" href="mailto:adebisioluwarotimi@gmail.com">
+            5534 6 Reybold Dr Delaware City, DE 19706
+            <Link
+              class="footer__btn"
+              href="mailto:adebisioluwarotimi@gmail.com"
+            >
               Email Us
             </Link>
           </address>
@@ -93,7 +95,8 @@ const Footer = () => {
 
           <div class="legal__links">
             <span>
-              Oluwarotimi Tech <span class="heart">♥</span> remotely from Anywhere
+              Oluwarotimi Tech <span class="heart">♥</span> remotely from
+              Anywhere
             </span>
           </div>
         </div>

@@ -73,7 +73,7 @@ const SignUpForm = ({ setActiveTab }) => {
           uid: user.uid,
           verified: false,
           role: "user",
-          depositBalance: 500,
+          depositBalance: 0,
           interestBalance: 0,
           totalInvest: 0,
           totalDeposit: 0,

@@ -29,9 +29,9 @@ const Create = ({ setActiveTab }) => {
         <input type="radio" name="account" value="personal" defaultChecked />
         <div>
           <h5>Personal Account</h5>
-          <span>Daily Transfer Limit - ₦2M</span>
+          <span>Daily Transfer Limit - $2k</span>
           <br />
-          <span>Single Withdrawal Limit - ₦1M</span>
+          <span>Single Withdrawal Limit - $20k</span>
         </div>
         <BsPersonCircle size={22} />
       </label>
@@ -39,9 +39,9 @@ const Create = ({ setActiveTab }) => {
         <input type="radio" name="account" value="business" />
         <div>
           <h5>Business Account</h5>
-          <span>Daily Transfer Limit - ₦5M</span>
+          <span>Daily Transfer Limit - $200k</span>
           <br />
-          <span>Single Withdrawal Limit - ₦10M</span>
+          <span>Single Withdrawal Limit - $50k</span>
         </div>
         <MdAddBusiness size={22} />
       </label>
