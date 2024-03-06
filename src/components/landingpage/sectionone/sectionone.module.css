@@ -1,7 +1,9 @@
 .sectione_container{
     height: 100vh;
      /* Set the background image */
-  background-image: url('./../../../assets/btc_bg.jpg'); /* Replace with the actual path to your image */
+  background-image: url('./../../../assets/bgg.png'); /* Replace with the actual path to your image */
+  background-repeat: no-repeat;
+  background-size: cover;
   
   /* Set the background size and other properties */
   background-size: cover;
