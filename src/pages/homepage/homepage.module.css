@@ -1,5 +1,6 @@
 .homepage_container{
     color: var(--color-bg);
     background: var(--color-dark);
-    /* position: absolute; */
+    position: relative;
+    margin-top: 4rem;
 }

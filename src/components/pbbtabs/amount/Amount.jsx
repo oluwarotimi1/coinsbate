@@ -6,7 +6,7 @@ const Amount = ({ setActiveTabBtc} ) => {
   };
   return (
     <div>
-      Amount here 
+    Enter Amount here
       <button onClick={handleConfirmAmount}>Next</button>
     </div>
   )
