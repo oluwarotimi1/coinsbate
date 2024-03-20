@@ -1,0 +1,50 @@
+.ammt_container {
+  border: 0.5px solid var(--color-accent);
+  border-radius: 10px;
+  min-height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.ammt_form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.div_ammt_input{
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.ammt_input{
+    width: 250px;
+    height: 2rem;
+    border-radius: 10px;
+    outline: none;
+    position: relative;
+}
+.div_ammt_input span{
+    position: absolute;
+    padding: 0rem 1rem;
+
+}
+.ammt_btn {
+  color: #fff;
+  background: #000;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: 0.2px solid #fff;
+  padding: 0.5em 2rem;
+  cursor: pointer;
+  border-radius: 1.3rem;
+}
+.ammt_btns{
+    display: flex;
+
+}
