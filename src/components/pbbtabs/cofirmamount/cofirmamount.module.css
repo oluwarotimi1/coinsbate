@@ -1,0 +1,33 @@
+.ammt_container {
+    border: 0.5px solid var(--color-accent);
+    border-radius: 10px;
+    min-height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .ammt_form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+  }
+
+  .ammt_btn {
+    color: #fff;
+    background: #000;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 0.2px solid #fff;
+    padding: 0.5em 2rem;
+    cursor: pointer;
+    border-radius: 1.3rem;
+  }
+  .ammt_btns{
+      display: flex;
+  
+  }
