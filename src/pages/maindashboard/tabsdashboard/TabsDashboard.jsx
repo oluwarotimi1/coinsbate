@@ -3,6 +3,7 @@ import Dash from "../../../components/dashboardcomps/Dash/Dash";
 import Fund from "../../../components/dashboardcomps/fund/Fund";
 import Withdraw from "../../../components/dashboardcomps/withdraw/Withdraw";
 import Invest from "../../../components/dashboardcomps/invest/Invest";
+import TransactionHistory from "../../../components/dashboardcomps/transactionhistory/TransactionHistory";
 
 const TabsDashboard = ({ activeDashboard, setActiveDashboard }) => {
   switch (activeDashboard) {
@@ -30,6 +31,13 @@ const TabsDashboard = ({ activeDashboard, setActiveDashboard }) => {
     case "withdraw":
       return (
         <Withdraw
+          activeDashboard={activeDashboard}
+          setActiveDashboard={setActiveDashboard}
+        />
+      );
+      case "history":
+      return (
+        <TransactionHistory
           activeDashboard={activeDashboard}
           setActiveDashboard={setActiveDashboard}
         />

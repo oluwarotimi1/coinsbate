@@ -20,7 +20,7 @@ const DashboardNav = ({ setActiveDashboard }) => {
     setIsMenuOpen(!isMenuOpen);
   };
   const handleTransaction = () => {
-    setActiveDashboard("transaction");
+    setActiveDashboard("history");
     setIsMenuOpen(!isMenuOpen);
   };
   const handleInvest = () => {
