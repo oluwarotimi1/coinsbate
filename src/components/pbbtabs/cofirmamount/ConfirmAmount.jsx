@@ -24,13 +24,14 @@ const ConfirmAmount = ({ setActiveTabBtc, inputData }) => {
           <h6>Conversion Rate: 1 USD = 1 USD </h6>
           <h6> In USD: </h6>
         </div>
-        </form>
-
         <span className={styles.ammt_btns}>
         <button className={styles.ammt_btn} onClick={handleAmount}>Back</button>
-        <button className={styles.ammt_btn} onClick={handleSendBtc}>Next</button>
+        <button className={styles.ammt_btn} onClick={handleSendBtc} type='submit'>Next</button>
 
         </span>
+        </form>
+
+        
       </Container>
     </div>
   )

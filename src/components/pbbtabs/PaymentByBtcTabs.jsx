@@ -28,6 +28,8 @@ const PaymentByBtcTabs = ({ activeTabBtc, setActiveTabBtc }) => {
         <SendBtc
           activeTabBtc={activeTabBtc}
           setActiveTabBtc={setActiveTabBtc}
+          setInputData={setInputData}
+          inputData={inputData}
         />
       );
 

@@ -1,8 +1,8 @@
 .ammt_container {
     border: 0.5px solid var(--color-accent);
     border-radius: 10px;
-    min-height: 300px;
-    width: 300px;
+    min-height: 400px;
+    min-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -12,6 +12,10 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
+  }
+  .sendbtc_address{
+    color: red;
+    cursor: pointer;
   }
 
   .ammt_btn {
