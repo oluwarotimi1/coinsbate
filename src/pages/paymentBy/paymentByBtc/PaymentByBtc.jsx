@@ -12,7 +12,7 @@ const PaymentByBtc = () => {
   return (
     <section className={styles.PaymentByBtc_section}>
         <Container className={styles.PaymentByBtc_container}>
-        <PaymentByBtcTabs activeTabBtc={activeTabBtc} setActiveTabBtc={setActiveTabBtc}/>
+        <PaymentByBtcTabs activeTabBtc={activeTabBtc} setActiveTabBtc={setActiveTabBtc} />
         </Container>
     </section>
   )

@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 import styles from './cofirmamount.module.css'
 import btcImage from '../../../assets/btc_image.png'
 
-const ConfirmAmount = ({ setActiveTabBtc, inputAmount }) => {
+const ConfirmAmount = ({ setActiveTabBtc, inputData }) => {
 
   const handleSendBtc =()=>{
     setActiveTabBtc("sendbtc");
@@ -18,7 +18,7 @@ const ConfirmAmount = ({ setActiveTabBtc, inputAmount }) => {
 
         <div className={styles.ammt_form_div}>
           <img src={btcImage} alt=""  width="50px" height="50px"/>
-          <h6>Amount : {inputAmount}</h6>
+          <h6>Amount : {inputData}</h6>
           <h6>Charge</h6>
           <h6>Payable: </h6>
           <h6>Conversion Rate: 1 USD = 1 USD </h6>
