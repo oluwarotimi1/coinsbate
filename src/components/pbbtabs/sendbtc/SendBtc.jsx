@@ -3,13 +3,14 @@ import { Container } from 'react-bootstrap'
 import styles from './sendbtc.module.css'
 import btcImage from '../../../assets/btc_image.png'
 import btcimg from '../../../assets/btc.png'
+import defaultImg from '../../../assets/default.png'
 import {imageDb} from '../../../auth/firebase/firebase'
 import { v4 as uuidv4 } from 'uuid';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const SendBtc = ({ setActiveTabBtc, inputData}) => {
 
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(true);
 
   const [uploadedImage, setUploadedImage] = useState(false)
 
@@ -67,13 +68,12 @@ const SendBtc = ({ setActiveTabBtc, inputData}) => {
           <img src={btcimg} alt=""  width="100px" height="100px"/>
         </div>
         <div>
-          <input type='file' onChange={(e)=>setImg(e.target.files[0])} />
-          <button onClick={handleUpload}>Upload</button>
+          <input type='file' onChange={(e)=>setImg(e.target.files[0])} /> <br />
+          <button onClick={handleUpload} className={styles.upload_btn}>Upload Screenshot of payment</button>
         </div>
         <div>
-          {uploadedImage && <img src={uploadedImageUrl} alt='' style={{marginBottom:'1rem'}} width="100px" height="100px" />
-       }
-         </div>
+            {uploadedImage ? <img src={uploadedImageUrl} alt='' style={{ marginBottom: '1rem' }} width="100px" height="100px" /> : <img src={defaultImg} alt='' style={{ marginBottom: '1rem' }} width="100px" height="100px" />}
+          </div>
         
         </form>
 

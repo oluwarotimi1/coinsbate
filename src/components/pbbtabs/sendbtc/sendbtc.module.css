@@ -40,3 +40,11 @@
     border-top: 0.5px dotted var(--color-accent);
     margin: 0.8rem 0rem;
   }
+  .upload_btn{
+    margin: 1rem 0.5rem;
+    border: none;
+    border: 0.2px solid var(--color-accent);
+    padding: 0.8rem 0.5rem ;
+    border-radius: 8px;
+    background: var(--color-gold);
+  }
