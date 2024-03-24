@@ -7,8 +7,9 @@ import defaultImg from "../../../assets/default.png";
 import { imageDb } from "../../../auth/firebase/firebase";
 import { v4 as uuidv4 } from "uuid";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { useNavigate } from "react-router-dom";
 
-const SendBtc = ({ setActiveTabBtc, inputData }) => {
+const SendBtc = ({ setActiveDashboard, inputData }) => {
   const [copied, setCopied] = useState(true);
 
   const [uploadedImage, setUploadedImage] = useState(false);
@@ -17,8 +18,12 @@ const SendBtc = ({ setActiveTabBtc, inputData }) => {
 
   const [uploadedImageUrl, setUploadedImageUrl] = useState("");
 
+  const navigate = useNavigate("")
+
   const handleSentBtc = () => {
-    setActiveTabBtc("sendbtc");
+    navigate("/dashboard")
+    setActiveDashboard("history");
+
   };
   const handleCopy = () => {
     navigator.clipboard
