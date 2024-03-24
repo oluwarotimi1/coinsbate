@@ -31,3 +31,7 @@
       display: flex;
   
   }
+  .ammt_form_div h6{
+    border-top: 0.5px dotted var(--color-accent);
+    margin: 0.8rem 0rem;
+  }

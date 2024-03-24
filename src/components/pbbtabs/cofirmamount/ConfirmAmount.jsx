@@ -16,13 +16,13 @@ const ConfirmAmount = ({ setActiveTabBtc }) => {
       <Container  className={styles.ammt_container}>
       <form className={styles.ammt_form}>
 
-        <div>
+        <div className={styles.ammt_form_div}>
           <img src={btcImage} alt=""  width="50px" height="50px"/>
           <h6>Amount : </h6>
           <h6>Charge</h6>
           <h6>Payable: </h6>
           <h6>Conversion Rate: 1 USD = 1 USD </h6>
-          <h6> In USD: 200</h6>
+          <h6> In USD: </h6>
         </div>
         </form>
 

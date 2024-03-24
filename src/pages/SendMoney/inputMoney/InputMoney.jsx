@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./inputmoney.module.css";
 import { Container } from "react-bootstrap";
-import { GiNigeria } from "react-icons/gi";
+import { CiDollar } from "react-icons/ci";
 
 const InputMoney = ({ setActiveTabSend }) => {
   const handleContinue = () => {
@@ -18,11 +18,11 @@ const InputMoney = ({ setActiveTabSend }) => {
         <div className={styles.inputmoney_balance}>
           <div className={styles.inputmoney_balance_div_one}>
             <span style={{ color: "green" }}>
-              <GiNigeria />
+              <CiDollar />
             </span>
-            <span>Nigerian Naira Balance</span>
+            <span>Current Balance</span>
           </div>
-          <div>N500.00</div>
+          <div>$700.00</div>
         </div>
 
         <div>
@@ -47,7 +47,7 @@ const InputMoney = ({ setActiveTabSend }) => {
                   className={styles.select_currency}
                 >
                   <option value="ngn" selected>
-                    Naira
+                    Dollar
                   </option>
                   <option value="dollar">Dollar</option>
                   <option value="crypto">USDT</option>
