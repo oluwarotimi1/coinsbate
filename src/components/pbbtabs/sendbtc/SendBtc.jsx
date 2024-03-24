@@ -2,11 +2,20 @@ import React, { useState } from 'react'
 import { Container } from 'react-bootstrap'
 import styles from './sendbtc.module.css'
 import btcImage from '../../../assets/btc_image.png'
-import usdtimg from '../../../assets/usdt.png'
+import btcimg from '../../../assets/btc.png'
+import {imageDb} from '../../../auth/firebase/firebase'
+import { v4 as uuidv4 } from 'uuid';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const SendBtc = ({ setActiveTabBtc, inputData}) => {
 
   const [copied, setCopied] = useState(false);
+
+  const [uploadedImage, setUploadedImage] = useState(false)
+
+  const [img, setImg] = useState('');
+
+  const [uploadedImageUrl, setUploadedImageUrl] = useState('');
 
   const handleConfirmAmount =()=>{
     setActiveTabBtc("confirmamount");
@@ -22,6 +31,19 @@ const SendBtc = ({ setActiveTabBtc, inputData}) => {
       })
       .catch((error) => console.error("Failed to copy:", error));
   };
+
+  const handleUpload = async (e) => {
+    try {
+      e.preventDefault()
+      const imgRef = ref(imageDb, `files/${uuidv4()}`);
+      await uploadBytes(imgRef, img);
+      const downloadUrl = await getDownloadURL(imgRef);
+      setUploadedImage(true)
+      setUploadedImageUrl(downloadUrl);
+    } catch (error) {
+      console.error('Failed to upload image:', error);
+    }
+  };
   return (
     <div>
       <Container  className={styles.ammt_container}>
@@ -35,18 +57,30 @@ const SendBtc = ({ setActiveTabBtc, inputData}) => {
             <h6>Please follow the instruction bellow</h6>
           </div>
           <div>
-            <p>Kindly make your Usdt TRC20 deposit to the following wallet address</p>
+            <p>Kindly make your $BTC Bitcoin deposit to the following wallet address</p>
 
-            <span className={styles.sendbtc_address} onClick={handleCopy}> TNABkNR8cGGhKTrtq2Hv3dk3rLL9uotRV1 </span>
+            <span className={styles.sendbtc_address} onClick={handleCopy}> 18VoK1RJ4WCBEdbgspr2bxJEgZzQdF9Y4V</span>
             <br/ >
             <span>Tap to copy</span>
             <span onClick={handleCopy}> {copied && <span style={{ marginLeft: "5px" }}>Copied!</span>}</span>
           </div>
-          <img src={usdtimg} alt=""  width="100px" height="100px"/>
+          <img src={btcimg} alt=""  width="100px" height="100px"/>
         </div>
+        <div>
+          <input type='file' onChange={(e)=>setImg(e.target.files[0])} />
+          <button onClick={handleUpload}>Upload</button>
+        </div>
+        <div>
+          {uploadedImage && <img src={uploadedImageUrl} alt='' style={{marginBottom:'1rem'}} width="100px" height="100px" />
+       }
+         </div>
+        
         </form>
 
         <span className={styles.ammt_btns}>
+
+        
+
         <button className={styles.ammt_btn} onClick={handleConfirmAmount}>Back</button>
         <button className={styles.ammt_btn} onClick={handleSentBtc}>Next</button>
 
