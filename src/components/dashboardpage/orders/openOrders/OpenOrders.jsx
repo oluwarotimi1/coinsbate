@@ -18,6 +18,7 @@ const OpenOrders = () => {
                   <th>#</th>
                   <th >Transaction ID</th>
                   <th>Amount Status</th>
+                  <th>Gateway</th>
                   <th>Status</th>
                 </tr>
               </thead>
@@ -27,9 +28,11 @@ const OpenOrders = () => {
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>2</td>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -37,6 +40,7 @@ const OpenOrders = () => {
                 <tr>
                   <td>3</td>
                   <td ></td>
+                  <td></td>
                   <td></td>
                   <td></td>
                 </tr>
