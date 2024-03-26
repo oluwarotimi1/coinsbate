@@ -91,14 +91,9 @@ const Footer = () => {
         </ul>
 
         <div class="legal">
-          <p> RegXchange &copy; 2023. All rights reserved.</p>
+          <p> Coinsbate &copy; 2024. All rights reserved.</p>
 
-          <div class="legal__links">
-            <span>
-              Oluwarotimi Tech <span class="heart">♥</span> remotely from
-              Anywhere
-            </span>
-          </div>
+         
         </div>
       </footer>
     </div>

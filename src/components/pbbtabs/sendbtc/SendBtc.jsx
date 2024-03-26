@@ -9,8 +9,8 @@ import { v4 as uuidv4 } from "uuid";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 
-const SendBtc = ({ setActiveDashboard, inputData }) => {
-  const [copied, setCopied] = useState(true);
+const SendBtc = ({ inputData }) => {
+  const [copied, setCopied] = useState(false);
 
   const [uploadedImage, setUploadedImage] = useState(false);
 
@@ -22,7 +22,6 @@ const SendBtc = ({ setActiveDashboard, inputData }) => {
 
   const handleSentBtc = () => {
     navigate("/dashboard")
-    setActiveDashboard("history");
 
   };
   const handleCopy = () => {
