@@ -101,7 +101,7 @@ const InvestmentPlan = () => {
                       }}>Capital</span>
                   </p>
                 </div>
-                <h5>$50,000 - $150,000</h5>
+                <h5>$10,000 - $50,000</h5>
                 <button className={styles.invest_btn}>Invest Now</button>
               </Card>
             </Col>
@@ -118,7 +118,7 @@ const InvestmentPlan = () => {
                     Total 111% + <span style={{ color: "blue" }}>Capital</span>
                   </p>
                 </div>
-                <h5>$15,000 - $50,000</h5>
+                <h5>$50,000 - $100,000</h5>
                 <button className={styles.invest_btn}>Invest Now</button>
               </Card>
             </Col>
