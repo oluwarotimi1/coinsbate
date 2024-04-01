@@ -13,7 +13,7 @@ const InvestmentPlan = () => {
               <Card className={styles.invest_card}>
                 <h3 >AMATEUR PLAN</h3>
                 <div className={styles.invest_card_div}>
-                  <p>Return 1.4%</p>
+                  <p>Return 1.14%</p>
                   <p>Every day</p>
                   <p>For 7 Day</p>
                   <p style={{ fontSize: "1rem" }}>
@@ -81,7 +81,7 @@ const InvestmentPlan = () => {
                     </span>
                   </p>
                 </div>
-                <h5>$4,000 - $50,000</h5>
+                <h5>$4,000 - $10,000</h5>
                 <button className={styles.invest_btn}>Invest Now</button>
               </Card>
             </Col>
