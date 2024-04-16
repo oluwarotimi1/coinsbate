@@ -36,21 +36,20 @@ const TabsDashboard = ({ activeDashboard, setActiveDashboard }) => {
           setActiveDashboard={setActiveDashboard}
         />
       );
-      case "history":
+    case "history":
       return (
         <TransactionHistory
           activeDashboard={activeDashboard}
           setActiveDashboard={setActiveDashboard}
         />
       );
-      case "help":
-        return (
-          <HelpSupport
+    case "help":
+      return (
+        <HelpSupport
           activeDashboard={activeDashboard}
           setActiveDashboard={setActiveDashboard}
-          />
-
-        )
+        />
+      );
 
     default:
       return (

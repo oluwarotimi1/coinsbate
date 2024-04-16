@@ -6,7 +6,7 @@ import usdtImage from "../../assets/usdt_image.png";
 import { TbArrowBackUp } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 
-const DepositBtc = ({inputData}) => {
+const DepositBtc = () => {
     const navigate = useNavigate()
     const handleBack = () => {
         navigate("/dashboard")
