@@ -4,6 +4,7 @@ import Fund from "../../../components/dashboardcomps/fund/Fund";
 import Withdraw from "../../../components/dashboardcomps/withdraw/Withdraw";
 import Invest from "../../../components/dashboardcomps/invest/Invest";
 import TransactionHistory from "../../../components/dashboardcomps/transactionhistory/TransactionHistory";
+import HelpSupport from "../../../components/dashboardcomps/helpsupport/HelpSupport";
 
 const TabsDashboard = ({ activeDashboard, setActiveDashboard }) => {
   switch (activeDashboard) {
@@ -42,6 +43,14 @@ const TabsDashboard = ({ activeDashboard, setActiveDashboard }) => {
           setActiveDashboard={setActiveDashboard}
         />
       );
+      case "help":
+        return (
+          <HelpSupport
+          activeDashboard={activeDashboard}
+          setActiveDashboard={setActiveDashboard}
+          />
+
+        )
 
     default:
       return (

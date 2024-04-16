@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./inputmoney.module.css";
 import { Container } from "react-bootstrap";
 import { CiDollar } from "react-icons/ci";
+import { UserContext } from "../../../components/context/UserContext";
 
 const InputMoney = ({ setActiveTabSend }) => {
   const handleContinue = () => {
     setActiveTabSend("recipient");
   };
+
+  const {user} = useContext(UserContext)
 
   return (
     <Container>
@@ -22,7 +25,7 @@ const InputMoney = ({ setActiveTabSend }) => {
             </span>
             <span>Current Balance</span>
           </div>
-          <div>$700.00</div>
+          <div>${user?.depositBalance}</div>
         </div>
 
         <div>
