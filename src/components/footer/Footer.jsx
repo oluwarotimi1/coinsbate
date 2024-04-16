@@ -15,7 +15,7 @@ const Footer = () => {
             5534 6 Reybold Dr Delaware City, DE 19706
             <Link
               class="footer__btn"
-              href="mailto:adebisioluwarotimi@gmail.com"
+              href="mailto:coinsbate@gmail.com"
             >
               Email Us
             </Link>
