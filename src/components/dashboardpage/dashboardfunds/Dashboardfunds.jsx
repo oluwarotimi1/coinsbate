@@ -40,8 +40,8 @@ const Dashboardfunds = () => {
     // Run the function every day (24 hours)
     // const intervalId = setInterval(updateInterestBalance, 24 * 60 * 60 * 1000);
 
-     // Run the function every 30 seconds
-     const intervalId = setInterval(updateInterestBalance, 30 * 1000);
+     // Run the function every 24 hours
+     const intervalId = setInterval(updateInterestBalance, 24 * 60 * 60 * 1000);
 
     // Clean up function to clear interval
     return () => clearInterval(intervalId);
