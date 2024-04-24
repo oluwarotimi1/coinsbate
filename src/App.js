@@ -17,6 +17,7 @@ import SendMoneyBank from "./pages/SendMoney/SendMoneyBank";
 import DepositBtc from "./pages/deposit/DepositBtc";
 import PaymentByBtc from "./pages/paymentBy/paymentByBtc/PaymentByBtc";
 import PaymentByUsdt from "./pages/paymentBy/paymentByUsdt/PaymentByUsdt";
+import Invest from "./pages/invest/Invest";
 
 function App() {
   const { isLoggedIn } = useContext(UserContext);
@@ -82,6 +83,14 @@ function App() {
           element={
             <PrivateRoute auth={isLoggedIn}>
               <PaymentByBtc />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/invest"
+          element={
+            <PrivateRoute auth={isLoggedIn}>
+              <Invest />
             </PrivateRoute>
           }
         />

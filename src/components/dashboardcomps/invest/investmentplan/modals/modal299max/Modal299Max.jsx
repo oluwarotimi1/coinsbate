@@ -1,0 +1,96 @@
+import { useContext, useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+import styles from "./modal299max.module.css";
+import { UserContext } from "../../../../../context/UserContext";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+
+function Modal299Max() {
+  const { user } = useContext(UserContext);
+  const [show, setShow] = useState(false);
+  const { isLoggedIn } = useContext(UserContext);
+  const navigate = useNavigate("");
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
+  const onSubmit = (data) => {
+    if ({ isLoggedIn }) {
+      navigate("/invest");
+    } else return setShow(true);
+    console.log(data);
+  };
+  const handleClose = () => {
+    setShow(false);
+  };
+
+  const handleShow = () => {
+    setShow(true);
+  };
+
+
+  return (
+    <div>
+      <button className={styles.invest_btn1} onClick={handleShow}>
+        Invest Now
+      </button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm to invest on AMATEUR PLAN</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <div className={styles.amateur_heading}>
+                <p>invest: $100 - $999</p>
+                <p>Interest: 1.14 %</p>
+                <p>per 24 hours , 7 timess</p>
+              </div>
+              <Form.Label className={styles.select_wallet}>
+                Select Wallet
+              </Form.Label>
+              <Form.Select aria-label="Default select example">
+                <option>Deposit Wallet -$ {user?.depositBalance}</option>
+                <option value="1">
+                  Interest Wallet -$ {user?.interestBalance}
+                </option>
+              </Form.Select>
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Invest Amount</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Enter amount to invest"
+                autoFocus
+                {...register("amount", { required: "Email Address is required" })}
+                aria-invalid={errors.mail ? "true" : "false"}
+              />
+              <br />
+              {errors.amount?.type === "required" && (
+                <p role="alert" style={{ color: "red" }}>
+                  Input amount(Minimum $100)
+                </p>
+              )}
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Another Plan
+                </Button>
+                <input variant="primary" type="submit" />
+              </Modal.Footer>
+            </Form.Group>
+          </form>
+        </Modal.Body>
+      </Modal>
+    </div>
+  );
+}
+
+export default Modal299Max;

@@ -1,17 +1,19 @@
 import React from "react";
 import styles from "./investmentplan.module.css";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import Modal299Max from "./modals/modal299max/Modal299Max";
 
 const InvestmentPlan = () => {
+
   return (
     <section className={styles.plan_invest} id="invest">
-      <Container className={styles.plan_invest_container} >
+      <Container className={styles.plan_invest_container}>
         <h4>Investment Plans</h4>
         <div>
           <Row>
             <Col>
               <Card className={styles.invest_card}>
-                <h3 >AMATEUR PLAN</h3>
+                <h3>AMATEUR PLAN</h3>
                 <div className={styles.invest_card_div}>
                   <p>Return 1.14%</p>
                   <p>Every day</p>
@@ -30,8 +32,8 @@ const InvestmentPlan = () => {
                     </span>
                   </p>
                 </div>
-                <h5>$50 - $299</h5>
-                <button className={styles.invest_btn}>Invest Now</button>
+                <h5>$100 - $999</h5>
+                <span >{ <Modal299Max/>}</span>
               </Card>
             </Col>
             <Col>
@@ -55,11 +57,11 @@ const InvestmentPlan = () => {
                     </span>
                   </p>
                 </div>
-                <h5>$300 - $4000</h5>
+                <h5>$1000 - $4000</h5>
                 <button className={styles.invest_btn}>Invest Now</button>
               </Card>
             </Col>
-          
+
             <Col>
               <Card className={styles.invest_card}>
                 <h3>AU:1.0 GOLD PLAN</h3>
@@ -93,12 +95,17 @@ const InvestmentPlan = () => {
                   <p>Every day</p>
                   <p>For 60 Days</p>
                   <p style={{ fontSize: "1rem" }}>
-                    Total 120% + <span style={{
+                    Total 120% +{" "}
+                    <span
+                      style={{
                         color: "white",
                         fontSize: "12px",
                         background: "green",
                         padding: "3px",
-                      }}>Capital</span>
+                      }}
+                    >
+                      Capital
+                    </span>
                   </p>
                 </div>
                 <h5>$10,000 - $50,000</h5>
@@ -130,21 +137,26 @@ const InvestmentPlan = () => {
                   <p>Every day</p>
                   <p>For 60 Days</p>
                   <p style={{ fontSize: "1rem" }}>
-                    Total 132%% + <span style={{
+                    Total 132%% +{" "}
+                    <span
+                      style={{
                         color: "white",
                         fontSize: "12px",
                         background: "green",
                         padding: "3px",
-                      }}>Capital</span>
+                      }}
+                    >
+                      Capital
+                    </span>
                   </p>
                 </div>
                 <h5>$100,000 - $1,000,000</h5>
                 <button className={styles.invest_btn}>Invest Now</button>
               </Card>
             </Col>
-        
+
             <Col>
-            <Card className={styles.invest_card}>
+              <Card className={styles.invest_card}>
                 <h3>OIL AND GAS PLAN</h3>
                 <div className={styles.invest_card_div}>
                   <p>Return 2.4%</p>
@@ -166,12 +178,17 @@ const InvestmentPlan = () => {
                   <p>Every day</p>
                   <p>For 90 Days</p>
                   <p style={{ fontSize: "1rem" }}>
-                    Total 234%% + <span style={{
+                    Total 234%% +{" "}
+                    <span
+                      style={{
                         color: "white",
                         fontSize: "12px",
                         background: "green",
                         padding: "3px",
-                      }}>Capital</span>
+                      }}
+                    >
+                      Capital
+                    </span>
                   </p>
                 </div>
                 <h5>$25,000 - $1,000,000</h5>

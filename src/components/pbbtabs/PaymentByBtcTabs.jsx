@@ -3,7 +3,7 @@ import SendBtc from "./sendbtc/SendBtc";
 import Amount from "./amount/Amount";
 import ConfirmAmount from "./cofirmamount/ConfirmAmount";
 
-const PaymentByBtcTabs = ({ activeTabBtc, setActiveTabBtc }) => {
+const PaymentByBtcTabs = ({ activeTabBtc, setActiveTabBtc, setActiveDashboard }) => {
   const [inputData, setInputData] = useState("");
   switch (activeTabBtc) {
     case "amount":
@@ -30,6 +30,7 @@ const PaymentByBtcTabs = ({ activeTabBtc, setActiveTabBtc }) => {
           setActiveTabBtc={setActiveTabBtc}
           setInputData={setInputData}
           inputData={inputData}
+          setActiveDashboard={setActiveDashboard}
         />
       );
 
