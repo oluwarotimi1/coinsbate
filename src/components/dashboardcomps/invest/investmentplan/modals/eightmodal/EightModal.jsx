@@ -92,7 +92,7 @@ function EightModal() {
                 <Button variant="secondary" onClick={handleClose}>
                   Another Plan
                 </Button>
-                <input variant="primary" type="submit" />
+                <input variant="primary" type="submit"placeholder="Invest"/>
               </Modal.Footer>
             </Form.Group>
           </form>

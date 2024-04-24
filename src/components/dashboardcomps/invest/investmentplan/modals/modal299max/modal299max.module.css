@@ -20,4 +20,16 @@
 .modal299max_container{
     background:#343a40 ;
 }
+.invest_btn2{
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 0.5rem 0.5rem;
+    background-color: #cca354;
+    
+}
+.invest_btn1:hover{
+    background-color: #fff; 
+    color: #cca354;
+}
 
