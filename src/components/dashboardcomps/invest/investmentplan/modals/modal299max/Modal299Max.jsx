@@ -21,7 +21,7 @@ function Modal299Max() {
   } = useForm();
   const onSubmit = (data) => {
     if ({ isLoggedIn }) {
-      if(user?.depositBalance > 99 && user?.depositBalance < 4000){
+      if(user?.depositBalance > 99 && user?.depositBalance < 4000 && inputInvest > 99){
         Swal.fire({
           title: "Congratulations",
           text: "Your investment was a success! Kindly check your dashboard in 24hours to keep tabs of your interest!",
@@ -33,7 +33,7 @@ function Modal299Max() {
             window.scrollTo(0, 0); 
           }
         });
-      } else return setDepositError("Insufficient balance")
+      } else return setDepositError("Insufficient balance (Minimum Investment is $100)")
       
     } else return setShow(true);
     console.log(data);
