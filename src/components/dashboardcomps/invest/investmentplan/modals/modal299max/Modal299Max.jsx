@@ -12,6 +12,7 @@ function Modal299Max() {
   const [show, setShow] = useState(false);
   const { isLoggedIn } = useContext(UserContext);
   const [inputInvest, setInputInvest] = useState("");
+  const [depositError, setDepositError] = useState("")
 
   const {
     register,
@@ -20,17 +21,20 @@ function Modal299Max() {
   } = useForm();
   const onSubmit = (data) => {
     if ({ isLoggedIn }) {
-      Swal.fire({
-        title: "Congratulations",
-        text: "Your investment was a success! Kindly check your dashboard in 24hours to keep tabs of your interest!",
-        icon: "success"
-      }).then((result) => {
-        // Reload the page
-        if (result.isConfirmed) {
-          window.location.reload();
-          window.scrollTo(0, 0); 
-        }
-      });
+      if(user?.depositBalance > 99 && user?.depositBalance < 4000){
+        Swal.fire({
+          title: "Congratulations",
+          text: "Your investment was a success! Kindly check your dashboard in 24hours to keep tabs of your interest!",
+          icon: "success"
+        }).then((result) => {
+          // Reload the page
+          if (result.isConfirmed) {
+            window.location.reload();
+            window.scrollTo(0, 0); 
+          }
+        });
+      } else return setDepositError("Insufficient balance")
+      
     } else return setShow(true);
     console.log(data);
   };
@@ -97,7 +101,11 @@ function Modal299Max() {
                 <p role="alert" style={{ color: "red" }}>
                   Input amount(Minimum $100)
                 </p>
+                
               )}
+              <p role="alert" style={{ color: "red" }}>
+                  {depositError}
+                </p>
               <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                   Another Plan
