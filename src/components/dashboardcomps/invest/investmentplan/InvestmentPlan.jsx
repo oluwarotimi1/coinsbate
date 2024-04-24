@@ -2,6 +2,13 @@ import React from "react";
 import styles from "./investmentplan.module.css";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Modal299Max from "./modals/modal299max/Modal299Max";
+import Modal4000Max from "./modals/modalmax4000/Modal4000Max";
+import ThirdModal from "./modals/thirdModal/ThirdModal";
+import FourthModal from "./modals/fourthmodal/FourthModal";
+import FifthModal from "./modals/fifthmodal/FifthModal";
+import SixthModal from "./modals/sixthmodal/SixthModal"
+import SeventhModal from "./modals/seventhmodal/SeventhModal"
+import EightModal from "./modals/eightmodal/EightModal";
 
 const InvestmentPlan = () => {
 
@@ -33,7 +40,7 @@ const InvestmentPlan = () => {
                   </p>
                 </div>
                 <h5>$100 - $999</h5>
-                <span >{ <Modal299Max/>}</span>
+                <span >{ <Modal299Max />}</span>
               </Card>
             </Col>
             <Col>
@@ -58,8 +65,8 @@ const InvestmentPlan = () => {
                   </p>
                 </div>
                 <h5>$1000 - $4000</h5>
-                <button className={styles.invest_btn}>Invest Now</button>
-              </Card>
+                <span >{ <Modal4000Max />}</span>
+                  </Card>
             </Col>
 
             <Col>
@@ -84,7 +91,7 @@ const InvestmentPlan = () => {
                   </p>
                 </div>
                 <h5>$4,000 - $10,000</h5>
-                <button className={styles.invest_btn}>Invest Now</button>
+                <span >{ <ThirdModal />}</span>
               </Card>
             </Col>
             <Col>
@@ -109,7 +116,7 @@ const InvestmentPlan = () => {
                   </p>
                 </div>
                 <h5>$10,000 - $50,000</h5>
-                <button className={styles.invest_btn}>Invest Now</button>
+                <span >{ <FourthModal />}</span>
               </Card>
             </Col>
           </Row>
@@ -126,7 +133,7 @@ const InvestmentPlan = () => {
                   </p>
                 </div>
                 <h5>$50,000 - $100,000</h5>
-                <button className={styles.invest_btn}>Invest Now</button>
+                <span >{ <FifthModal />}</span>
               </Card>
             </Col>
             <Col>
@@ -151,7 +158,7 @@ const InvestmentPlan = () => {
                   </p>
                 </div>
                 <h5>$100,000 - $1,000,000</h5>
-                <button className={styles.invest_btn}>Invest Now</button>
+                <span >{ <SixthModal />}</span>
               </Card>
             </Col>
 
@@ -167,7 +174,7 @@ const InvestmentPlan = () => {
                   </p>
                 </div>
                 <h5>$200,000 - $1,000,000</h5>
-                <button className={styles.invest_btn}>Invest Now</button>
+                <span >{ <SeventhModal />}</span>
               </Card>
             </Col>
             <Col>
@@ -192,7 +199,7 @@ const InvestmentPlan = () => {
                   </p>
                 </div>
                 <h5>$25,000 - $1,000,000</h5>
-                <button className={styles.invest_btn}>Invest Now</button>
+                <span >{ <EightModal />}</span>
               </Card>
             </Col>
           </Row>

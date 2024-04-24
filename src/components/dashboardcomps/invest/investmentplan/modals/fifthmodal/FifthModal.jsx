@@ -2,12 +2,12 @@ import { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import styles from "./modal299max.module.css";
+import styles from "./fifthmodal.module.css";
 import { UserContext } from "../../../../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-function Modal299Max() {
+function FifthModal() {
   const { user } = useContext(UserContext);
   const [show, setShow] = useState(false);
   const { isLoggedIn } = useContext(UserContext);
@@ -21,7 +21,7 @@ function Modal299Max() {
   } = useForm();
   const onSubmit = (data) => {
     if ({ isLoggedIn }) {
-      navigate("/invest");
+      navigate("/dashboard");
     } else return setShow(true);
     console.log(data);
   };
@@ -46,15 +46,15 @@ function Modal299Max() {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Confirm to invest on AMATEUR PLAN</Modal.Title>
+          <Modal.Title>Confirm to invest on AS:1.0 ASSETS PLAN</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <div className={styles.amateur_heading}>
-                <p>invest: $100 - $999</p>
-                <p>Interest: 1.14 %</p>
-                <p>per 24 hours , 7 timess</p>
+                <p>invest: $50,000 - $100,000</p>
+                <p>Interest: 1.85%</p>
+                <p>Every day, for 60days</p>
               </div>
               <Form.Label className={styles.select_wallet}>
                 Select Wallet
@@ -86,7 +86,7 @@ function Modal299Max() {
               <br />
               {errors.amount?.type === "required" && (
                 <p role="alert" style={{ color: "red" }}>
-                  Input amount(Minimum $100)
+                  Input amount(Minimum $4000)
                 </p>
               )}
               <Modal.Footer>
@@ -103,4 +103,4 @@ function Modal299Max() {
   );
 }
 
-export default Modal299Max;
+export default FifthModal;

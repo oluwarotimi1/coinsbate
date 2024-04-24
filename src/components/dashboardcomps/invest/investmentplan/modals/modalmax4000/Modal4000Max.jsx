@@ -2,12 +2,12 @@ import { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import styles from "./modal299max.module.css";
+import styles from "./modal4000max.module.css";
 import { UserContext } from "../../../../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-function Modal299Max() {
+function Modal4000Max() {
   const { user } = useContext(UserContext);
   const [show, setShow] = useState(false);
   const { isLoggedIn } = useContext(UserContext);
@@ -46,13 +46,13 @@ function Modal299Max() {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Confirm to invest on AMATEUR PLAN</Modal.Title>
+          <Modal.Title>Confirm to invest on STARTER PLAN</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <div className={styles.amateur_heading}>
-                <p>invest: $100 - $999</p>
+                <p>invest: $1000 - $3999</p>
                 <p>Interest: 1.14 %</p>
                 <p>per 24 hours , 7 timess</p>
               </div>
@@ -103,4 +103,4 @@ function Modal299Max() {
   );
 }
 
-export default Modal299Max;
+export default Modal4000Max;
