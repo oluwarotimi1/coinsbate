@@ -86,7 +86,7 @@ function FifthModal() {
               <br />
               {errors.amount?.type === "required" && (
                 <p role="alert" style={{ color: "red" }}>
-                  Input amount(Minimum $4000)
+                  Input amount(Minimum $50,000)
                 </p>
               )}
               <Modal.Footer>

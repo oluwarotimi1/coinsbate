@@ -85,7 +85,7 @@ function SeventhModal() {
               <br />
               {errors.amount?.type === "required" && (
                 <p role="alert" style={{ color: "red" }}>
-                  Input amount(Minimum $4000)
+                  Input amount(Minimum $200,000)
                 </p>
               )}
               <Modal.Footer>
