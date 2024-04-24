@@ -21,7 +21,7 @@ function Modal299Max() {
   } = useForm();
   const onSubmit = (data) => {
     if ({ isLoggedIn }) {
-      if(user?.depositBalance > 99 && user?.depositBalance < 4000 && inputInvest > 99){
+      if(user?.depositBalance > 99 && user?.depositBalance < 4000 && inputInvest > 99 && inputInvest <4001){
         Swal.fire({
           title: "Congratulations",
           text: "Your investment was a success! Kindly check your dashboard in 24hours to keep tabs of your interest!",
