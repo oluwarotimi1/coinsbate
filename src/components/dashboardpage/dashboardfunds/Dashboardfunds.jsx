@@ -64,7 +64,7 @@ const Dashboardfunds = () => {
               </div>
             </Card>
           </Col>
-          <Col>
+          <Col id="investment">
             <Card className={styles.dashboardfunds_card}>
               <div className={styles.dashboardfunds_card_wallet_balance}>
                 <div>

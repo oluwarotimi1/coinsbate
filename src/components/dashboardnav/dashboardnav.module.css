@@ -1,13 +1,15 @@
 
 .dashboardnav_container a {
-  color: var(--color-dark);
+  /* color: var(--color-dark); */
+  color: #fff !important;
   font-size: 0.9rem;
   padding: 0.5rem 0.5rem;
   width: 100%;
-  background: var(--color-primary);
+  background: var(--color-dark);
   width: 100%;
-  border: 1px solid var(--color-primary);
+  border: 0.5px solid #cca354;
   border-radius: 4px;
+
 }
 .dashboardnav_container a:hover {
   color: var(--color-dark);
@@ -16,13 +18,14 @@
   width: 100%;
 }
 .main_dashboard_nav {
-  background: #fff;
+  background: #000;
   padding: 2rem 0.5rem;
   margin-top: 2rem;
   border-radius: 2rem;
   align-items: center;
 }
 .main_dashboard_nav h4 {
+  color: #cca354 !important;
   margin: 3rem 2rem;
 }
 .main_dashboard_nav ul {

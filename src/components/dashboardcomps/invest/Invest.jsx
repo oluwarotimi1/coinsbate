@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Container } from "react-bootstrap";
 import styles from "./invest.module.css";
 const Invest = () => {
+
+  const investmentRef = useRef(null);
+
+  const handleInvestNowClick = () => {
+    const offset = 100; // Adjust this value to your desired scroll offset
+    const elementPosition = investmentRef.current.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <section>
       <div className={styles.invest_section}>
@@ -16,7 +30,7 @@ const Invest = () => {
               guarantees fix interest for investors regardless of market
               conditions.
             </h6>
-            <button className={styles.AddNewBalance_proceed}>Invest Now</button>
+            <button className={styles.AddNewBalance_proceed} onClick={handleInvestNowClick} >Invest Now</button>
           </div>
         </Container>
       </div>

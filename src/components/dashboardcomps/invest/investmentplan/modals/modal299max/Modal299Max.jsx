@@ -5,14 +5,16 @@ import Modal from "react-bootstrap/Modal";
 import styles from "./modal299max.module.css";
 import { UserContext } from "../../../../../context/UserContext";
 import { useForm } from "react-hook-form";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function Modal299Max() {
   const { user } = useContext(UserContext);
   const [show, setShow] = useState(false);
   const { isLoggedIn } = useContext(UserContext);
   const [inputInvest, setInputInvest] = useState("");
-  const [depositError, setDepositError] = useState("")
+  const [depositError, setDepositError] = useState("");
+  const navigate = useNavigate("");
 
   const {
     register,
@@ -21,22 +23,31 @@ function Modal299Max() {
   } = useForm();
   const onSubmit = (data) => {
     if ({ isLoggedIn }) {
-      if(user?.depositBalance > 99 && user?.depositBalance < 4000 && inputInvest > 99 && inputInvest <4001){
+      if (
+        user?.depositBalance > 99 &&
+        user?.depositBalance < 4000 &&
+        inputInvest > 99 &&
+        inputInvest < 4001
+      ) {
         Swal.fire({
           title: "Congratulations",
           text: "Your investment was a success! Kindly check your dashboard in 24hours to keep tabs of your interest!",
-          icon: "success"
+          icon: "success",
         }).then((result) => {
           // Reload the page
           if (result.isConfirmed) {
             window.location.reload();
-            window.scrollTo(0, 0); 
+            window.scrollTo(0, 0);
           }
         });
-      } else return setDepositError("Insufficient balance (Minimum Investment is $100)")
-      
-    } else return setShow(true);
-    console.log(data);
+      } else
+        return setDepositError(
+          "Insufficient balance (Minimum Investment is $100)"
+        );
+    } else
+      // setShow(true);
+      navigate("/login");
+      console.log(data);
   };
   const handleClose = () => {
     setShow(false);
@@ -47,8 +58,7 @@ function Modal299Max() {
   };
 
   const handleAmountInvest = (event) => {
-      setInputInvest(event.target.value);
-    
+    setInputInvest(event.target.value);
   };
 
   return (
@@ -101,16 +111,20 @@ function Modal299Max() {
                 <p role="alert" style={{ color: "red" }}>
                   Input amount(Minimum $100)
                 </p>
-                
               )}
               <p role="alert" style={{ color: "red" }}>
-                  {depositError}
-                </p>
+                {depositError}
+              </p>
               <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                   Another Plan
                 </Button>
-                <input variant="primary" type="submit" Value="Invest" className={styles.invest_btn2} />
+                <input
+                  variant="primary"
+                  type="submit"
+                  Value="Invest"
+                  className={styles.invest_btn2}
+                />
               </Modal.Footer>
             </Form.Group>
           </form>
