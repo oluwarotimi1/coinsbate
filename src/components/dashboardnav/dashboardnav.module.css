@@ -58,6 +58,7 @@
 
 @media (max-width: 768px) {
   .main_dashboard_nav {
+    background: #000;
     margin-top: 0.5rem;
   }
   .dashboardnav_container {
@@ -66,9 +67,15 @@
     align-items: center;
   }
   .main_dashboard_nav {
-    background: #fff;
+    background: #000;
     padding: 2px ;
     border-radius: 2rem;
+  }
+  .navbar_menu{
+    color: #cca354;
+  }
+  .navbar_hamburger{
+    color: #cca354;
   }
   .dashboard_navv{
     display: flex;

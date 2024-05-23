@@ -44,14 +44,14 @@ const DashboardNav = ({ setActiveDashboard }) => {
       <div className={styles.dashboardnav_container}>
         <div className={styles.dashboard_navv}>
           <div>
-            <h4> Welcome, {user?.displayName}</h4>
+            <h4 > Welcome, {user?.displayName}</h4>
           </div>
 
           <div className={styles.menuToggle} onClick={toggleMenu}>
             <div>
               {" "}
-              <span>MENU</span>
-              <GiHamburgerMenu size={20} />{" "}
+              <span className={styles.navbar_menu}>MENU</span>
+             <span  className={styles.navbar_hamburger}> <GiHamburgerMenu size={20} /> </span>
             </div>
           </div>
         </div>
