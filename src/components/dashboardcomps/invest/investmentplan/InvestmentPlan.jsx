@@ -198,7 +198,7 @@ const InvestmentPlan = () => {
                     </span>
                   </p>
                 </div>
-                <h5>$25,000 - $1,000,000</h5>
+                <h5>$500,000 - $2,000,000</h5>
                 <span >{ <EightModal />}</span>
               </Card>
             </Col>
