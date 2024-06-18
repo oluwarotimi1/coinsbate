@@ -10,6 +10,7 @@ import SectionFive from "../../components/landingpage/sectionfive/SectionFive";
 import SectionSix from "../../components/landingpage/sectionsix/SectionSix";
 import InvestmentPlan from "../../components/dashboardcomps/invest/investmentplan/InvestmentPlan";
 import MarqueeHome from "../../components/marquee/MarqueeHome";
+import AboutUs from "../../components/aboutus/AboutUs";
 
 const Homepage = () => {
   // const primaryButtonStyle ={
@@ -20,6 +21,7 @@ const Homepage = () => {
       <div className={`${styles.homepage_section}`}>
         <SectionOne />
         <MarqueeHome />
+        <AboutUs />
         <InvestmentPlan />
         {/* <SectionThree /> */}
         <SectionTwo />
